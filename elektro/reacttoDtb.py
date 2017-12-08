@@ -49,7 +49,7 @@ led_pwm4.start(0)
 led_pwm5 = GPIO.PWM(svetlo_pin5, 1000)
 led_pwm5.start(0)
 
-heat_pwn = GPIO.PWM(heat_pin,750)
+heat_pwn = GPIO.PWM(heat_pin, 750)
 heat_pwn.start(0)
 
 
@@ -102,14 +102,16 @@ def getDtb():
 
         if currentline == 6:
             # Heat
-            print(row[0])
+            #print(row[0])
             if int(row[0] == 1):
+                print("HEAT STARTED na indexu: " + heatIndex)
                 heat_pwn.ChangeDutyCycle(heatIndex)
                 heatIndex = heatIndex - 5
                 if heatIndex == -5:
                     heatIndex = 100
             else:
                 heat_pwn.ChangeDutyCycle(0)
+                print("HEAT KILLED")
 
 
         if currentline == 7:
