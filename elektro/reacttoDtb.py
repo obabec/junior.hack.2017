@@ -10,7 +10,7 @@ results = 0
 # Setting maximal F, our 10mm led has max 1500 Hz so we will use 1000 Hz
 #setup phase
 
-svetlo_pin1 = 18
+svetlo_pin1 = 11
 GPIO.setup(svetlo_pin1, GPIO.OUT)
 
 svetlo_pin2 = 18
@@ -30,7 +30,7 @@ GPIO.setup(svetlo_pin5, GPIO.OUT)
 led_pwm1 = GPIO.PWM(svetlo_pin1, 1000)
 led_pwm1.start(0)
 
-led_pwm2 = GPIO.PWM(svetlo_pin1, 1000)
+led_pwm2 = GPIO.PWM(svetlo_pin2, 1000)
 led_pwm2.start(0)
 
 led_pwm3 = GPIO.PWM(svetlo_pin3, 1000)
@@ -44,7 +44,7 @@ led_pwm5.start(0)
 
 
 def getDtb():
-    
+
     db = MySQLdb.connect("localhost", "root", "pokemon123", "hackathonn")
     cursor = db.cursor()
     sql = "select argument from pins"
@@ -59,7 +59,6 @@ def getDtb():
 
         if currentline == 0:
             print(row[0])
-
             led_pwm1.ChangeDutyCycle(int(row[0]))
 
         if currentline == 1:
