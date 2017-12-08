@@ -7,8 +7,15 @@
 
 </head>
 <body>
+
+
+
 <div id="fullpage">
+
 	<section class="uvod section">
+
+
+
 		<nav class="navbar">
 			<div class="menu">
 				<div class="menu-span"></div>
@@ -17,24 +24,16 @@
 			</div>
 		</nav>
 		<div class="logo">
-			<div class="logo-pic"></div>
+			<img src="img/home_os.png">
 		</div>
 	</section>
-	<section class="lights section">
-		<nav class="navbar">
-			<div class="menu">
-				<div class="menu-span"></div>
-				<div class="menu-span"></div>
-				<div class="menu-span"></div>
-			</div>
-		</nav>
-		<div class="logo">
-			<div class="logo-pic"></div>
-		</div>
+	<!-- schová vše před loadem -->
+		
+	<section class="lights section hide">
+		
 	</section>
+
 </div>
-	
-	
 </body>
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
@@ -44,6 +43,9 @@
 <script type="text/javascript">
     $(document).ready(function() {
         $('#fullpage').fullpage();
+        $('.hide').css("display", "block");
     });
+
 </script>
+
 </html>
