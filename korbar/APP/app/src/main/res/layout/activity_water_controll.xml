@@ -4,12 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.tomaskorb.homeos.LightControllActivity"
-    android:background="@drawable/main_menu_background"
+    tools:context="com.example.tomaskorb.homeos.WaterControllActivity"
     android:orientation="vertical"
+    android:background="@drawable/main_menu_background"
     >
 
-    <!-- Prvni radek-->
     <include layout="@layout/action_bar" />
 
     <LinearLayout
@@ -33,16 +32,19 @@
                 android:textColor="@android:color/white"
                 android:textSize="35dp" />
 
-            <com.example.tomaskorb.homeos.LightImageView
-                android:layout_width="match_parent"
-                android:layout_height="190dp"
-                android:id="@+id/Light1Brightness"
+            <CheckBox
+                android:id="@+id/checkBox1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/water_checkbox"
+                android:layout_gravity="center_horizontal"
                 />
 
-            <SeekBar
-                android:layout_width="match_parent"
+            <Switch
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/Light1BrightnessController"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/Switch1"
                 />
 
 
@@ -63,16 +65,17 @@
                 android:textColor="@android:color/white"
                 android:textSize="35dp" />
 
-            <com.example.tomaskorb.homeos.LightImageView
-                android:layout_width="match_parent"
-                android:layout_height="190dp"
-                android:id="@+id/Light2Brightness"
-                />
-
-            <SeekBar
-                android:layout_width="match_parent"
+            <CheckBox
+                android:id="@+id/checkBox2"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/Light2BrightnessController"
+                android:layout_gravity="center_horizontal"
+                android:button="@drawable/water_checkbox" />
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/Switch2"
                 />
 
         </LinearLayout>
@@ -103,16 +106,17 @@
                 android:textColor="@android:color/white"
                 android:textSize="35dp" />
 
-            <com.example.tomaskorb.homeos.LightImageView
-                android:layout_width="match_parent"
-                android:layout_height="190dp"
-                android:id="@+id/Light3Brightness"
-                />
-
-            <SeekBar
-                android:layout_width="match_parent"
+            <CheckBox
+                android:id="@+id/checkBox3"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/Light3BrightnessController"
+                android:layout_gravity="center_horizontal"
+                android:button="@drawable/water_checkbox" />
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/Switch3"
                 />
 
         </LinearLayout>
@@ -132,19 +136,31 @@
                 android:textColor="@android:color/white"
                 android:textSize="35dp" />
 
-            <com.example.tomaskorb.homeos.LightImageView
-                android:layout_width="match_parent"
-                android:layout_height="190dp"
-                android:id="@+id/Light4Brightness"
+            <CheckBox
+                android:id="@+id/checkBox4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:button="@drawable/water_checkbox" />
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/Switch4"
                 />
 
-            <SeekBar
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/Light4BrightnessController"
-                />
         </LinearLayout>
 
     </LinearLayout>
+
+
+
+
+
+
+
+
+
+
 
 </LinearLayout>

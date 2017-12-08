@@ -28,6 +28,13 @@ public class MainMenu extends Activity {
         overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
     }
 
+    public void StartWaterControll(View v)
+    {
+        Intent intnt = new Intent(MainMenu.this,WaterControllActivity.class);
+        startActivity(intnt);
+        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+    }
+
 
 
 
