@@ -126,17 +126,17 @@ def getDtb():
         if currentline == 11:
             print(row[0])
 
-        if (numberOfWaterMinus % 50) == 0:
+        """if (numberOfWaterMinus % 50) == 0:
             print("Updatuju!")
             dbWater = MySQLdb.connect("localhost", "root", "pokemon123", "hackathonn")
             cursorWater = dbWater.cursor()
 
-    
+
             sqlWater = "UPDATE pins SET argument = %d WHERE id = 12"
             cursorWater.execute(sqlWater,waterStatus)
 
+        numberOfWaterMinus = numberOfWaterMinus + 1"""
         currentline = 1 + currentline
-        numberOfWaterMinus = numberOfWaterMinus + 1
 
 if __name__=='__main__':
     while True:
