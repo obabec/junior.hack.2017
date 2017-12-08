@@ -131,7 +131,5 @@ def getDtb():
 
 if __name__=='__main__':
     while True:
-        try:
-            getDtb()
-        except:
-            print()
+        getDtb()
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ")
