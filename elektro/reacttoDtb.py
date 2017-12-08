@@ -55,6 +55,7 @@ heat_pwn.start(0)
 
 def getDtb():
 
+    global heatindex
     db = MySQLdb.connect("localhost", "root", "pokemon123", "hackathonn")
 
     cursor = db.cursor()
