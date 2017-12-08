@@ -106,10 +106,10 @@ def getDtb():
             if int(row[0] == 1):
                 heat_pwn.ChangeDutyCycle(heatIndex)
                 heatIndex = heatIndex - 5
-                    if heatIndex == -5:
-                        heatIndex = 100
-            else
-                heat_pwn.ChangeDutyCycle(0                            ,)
+                if heatIndex == -5:
+                    heatIndex = 100
+            else:
+                heat_pwn.ChangeDutyCycle(0)
 
 
         if currentline == 7:
