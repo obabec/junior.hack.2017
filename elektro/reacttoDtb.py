@@ -14,7 +14,7 @@ heatindex = 100
 # Setting maximal F, our 10mm led has max 1500 Hz so we will use 1000 Hz
 #setup phase
 
-svetlo_pin1 = 11
+svetlo_pin1 = 13
 GPIO.setup(svetlo_pin1, GPIO.OUT)
 
 svetlo_pin2 = 18
@@ -29,7 +29,7 @@ GPIO.setup(svetlo_pin4, GPIO.OUT)
 svetlo_pin5 = 18
 GPIO.setup(svetlo_pin5, GPIO.OUT)
 
-heat_pin = 13
+heat_pin = 11
 GPIO.setup(heat_pin, GPIO.OUT)
 
 
