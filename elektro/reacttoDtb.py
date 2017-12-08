@@ -25,7 +25,7 @@ def getDtb():
 
 
 
-    db = MySQLdb.connect("10.10.5.234", "root", "pokemon123", "hackathonn")
+    db = MySQLdb.connect("localhost", "root", "pokemon123", "hackathonn")
 
     cursor = db.cursor()
     sql = "select argument from pins"
