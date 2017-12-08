@@ -1,0 +1,12 @@
+1 svetlo s promennou intenzitou hodnota 0 - 100
+2 svetlo s promennou intenzitou hodnota 0 - 100
+3 svetlo s promennou intenzitou hodnota 0 - 100
+4 svetlo s promennou intenzitou hodnota 0 - 100
+5 svetlo s promennou intenzitou hodnota 0 - 100
+6 heating, hodnota 0/1
+7 water 0/1
+8 water 0/1
+9 water 0/1
+10 water 0/1
+11 zamek 1/0
+
