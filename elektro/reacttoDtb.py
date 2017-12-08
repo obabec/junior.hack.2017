@@ -9,7 +9,7 @@ GPIO.setmode(GPIO.BOARD)
 results = 0
 numberOfWaterMinus = 0
 waterStatus = 500
-heatIndex = 100
+heatindex = 100
 
 # Setting maximal F, our 10mm led has max 1500 Hz so we will use 1000 Hz
 #setup phase
@@ -99,11 +99,11 @@ def getDtb():
             # Heat
             print(row[0])
             if int(row[0]) == 1:
-                heatIndex = heatIndex - 5
-                print("HEAT STARTED na indexu: " + heatIndex)
-                heat_pwn.ChangeDutyCycle(heatIndex)
-                if heatIndex == -5:
-                    heatIndex = 100
+                print("HEAT STARTED na indexu: " + heatindex)
+                heat_pwn.ChangeDutyCycle(heatindex)
+                heatindex = heatindex - 5
+                if heatindex == -5:
+                    heatindex = 100
             else:
                 heat_pwn.ChangeDutyCycle(0)
                 print("HEAT KILLED")
