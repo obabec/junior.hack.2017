@@ -34,14 +34,33 @@ h1{
 }
 .bloky{
 	display: inline-block;
-	width: 20%;
-	margin: 0 2.5%;
-	background-color: red;
+	width: 15%;
+	margin: 0 3%;
 	overflow: hidden;
+	position: relative;
 }
 .light{
+	top:0;
+	left: 0;
+	width: 100%;
+	z-index: 2;
+	position: relative;
+}
+.light2{
+	top:0;
+	left: 0;
+	width: 100%;
+	z-index: 3;
+	position: absolute;
+}
+#l1,#l2,#l3,#l4{
+	opacity: 0;
+}
+input[type=range]{
 	width: 100%;
 	position: relative;
+	left: 0;
+	margin: 30px 0;
 }
 .logo{
 	z-index: 3;
