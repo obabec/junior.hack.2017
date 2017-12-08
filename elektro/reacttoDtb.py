@@ -24,7 +24,7 @@ def getDtb():
 
 
 
-jh
+
     db = MySQLdb.connect("10.10.5.234", "root", "pokemon123", "hackathonn")
 
     cursor = db.cursor()
