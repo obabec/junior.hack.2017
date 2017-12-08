@@ -9,3 +9,4 @@ TEAM:
   Denis Vymyslicky
   Honza Blazek
   Tomas Korbar
+# kali
