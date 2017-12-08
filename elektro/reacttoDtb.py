@@ -2,6 +2,9 @@ import MySQLdb
 import RPi.GPIO as GPIO
 import time
 
+GPIO.setwarnings(False)
+GPIO.setmode(GPIO.BOARD)
+
 results = 0
 db = MySQLdb.connect("localhost", "root", "pokemon123", "hackathonn")
 cursor = db.cursor()
@@ -18,8 +21,7 @@ led_pwm1.start(0)
 
 def getDtb():
 
-    GPIO.setwarnings(False)
-    GPIO.setmode(GPIO.BOARD)
+
 
     #setup phase
 
