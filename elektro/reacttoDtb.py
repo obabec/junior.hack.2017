@@ -6,10 +6,6 @@ GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BOARD)
 
 results = 0
-db = MySQLdb.connect("localhost", "root", "pokemon123", "hackathonn")
-cursor = db.cursor()
-sql = "select argument from pins"
-
 
 # Setting maximal F, our 10mm led has max 1500 Hz so we will use 1000 Hz
 #setup phase
@@ -48,8 +44,10 @@ led_pwm5.start(0)
 
 
 def getDtb():
-
-
+    
+    db = MySQLdb.connect("localhost", "root", "pokemon123", "hackathonn")
+    cursor = db.cursor()
+    sql = "select argument from pins"
 
     cursor.execute(sql)
 
