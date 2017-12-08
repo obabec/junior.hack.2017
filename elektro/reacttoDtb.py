@@ -36,6 +36,7 @@ def getDtb():
 
 
     cursor.execute(sql)
+
     results = cursor.fetchall()
 
     currentline = 0
@@ -116,7 +117,6 @@ def getDtb():
             print("11")
 
     currentline += 1
-    db.close()
 
     # setup phase
     GPIO.setup(svetlo_pin1, GPIO.IN)
