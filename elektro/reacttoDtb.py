@@ -3,6 +3,10 @@ import RPi.GPIO as GPIO
 import time
 
 results = 0
+db = MySQLdb.connect("localhost", "root", "pokemon123", "hackathonn")
+cursor = db.cursor()
+sql = "select argument from pins"
+
 
 def getDtb():
 
@@ -30,10 +34,7 @@ def getDtb():
 
 
 
-    db = MySQLdb.connect("localhost", "root", "pokemon123", "hackathonn")
 
-    cursor = db.cursor()
-    sql = "select argument from pins"
     cursor.execute(sql)
     results = cursor.fetchall()
 
@@ -127,7 +128,6 @@ def getDtb():
     GPIO.setup(svetlo_pin4, GPIO.IN)
 
     GPIO.setup(svetlo_pin5, GPIO.IN)
-
 
 if __name__=='__main__':
     while True:
