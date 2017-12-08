@@ -6,11 +6,16 @@ results = 0
 db = MySQLdb.connect("localhost", "root", "pokemon123", "hackathonn")
 cursor = db.cursor()
 sql = "select argument from pins"
-led_pwm1 = 0
+
+# Setting maximal F, our 10mm led has max 1500 Hz so we will use 1000 Hz
+
+led_pwm1 = GPIO.PWM(svetlo_pin1, 1000)
+led_pwm1.start(0)
+
+
 
 def getDtb():
 
-    led_pwm1 = 0
     GPIO.setwarnings(False)
     GPIO.setmode(GPIO.BOARD)
 
@@ -46,11 +51,6 @@ def getDtb():
         #print("SUCKERINO: "+str(currentline)+" "+str(row[0]))
         if currentline == 0:
             print(row[0])
-
-            # Setting maximal F, our 10mm led has max 1500 Hz so we will use 1000 Hz
-            if led_pwm1 == 0:
-                led_pwm1 = GPIO.PWM(svetlo_pin1, 1000)
-                led_pwm1.start(100)
 
             # Procentuali nastaveni intenzity svetla
             led_pwm1.ChangeDutyCycle(int(row[0]))
