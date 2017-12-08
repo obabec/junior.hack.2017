@@ -19,17 +19,23 @@ h1{
 	width: 100%;
 }
 .hide{
-	display: none;
+	opacity: 0;
 	width: 100%;
 	height: 100%;
 }
 .load{
 	display: block;
 	z-index: 4;
-	position: absolute;
+	position: fixed;
+	top: 0;
 	width: 100%;
 	height: 100%;
-	margin: 20% 30%;
+	background
+}
+.bloky{
+	width: 20%;
+	margin: 0 2.5%;
+	background-color: red;
 }
 .logo{
 	z-index: 3;
@@ -70,11 +76,10 @@ h1{
 	margin: 0 15%;
 	position: relative;
 	z-index: 3;
-	background-color: red;
 }
 .fp-tableCell{
 	width: 100vw;
-}
+}	
 
 /*.glitch {
   position: relative;
