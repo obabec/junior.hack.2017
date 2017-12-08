@@ -21,7 +21,12 @@ public class MainMenu extends Activity {
         overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
     }
 
-
+    public void StartLockControll(View v)
+    {
+        Intent intnt = new Intent(MainMenu.this,LockControllActivity.class);
+        startActivity(intnt);
+        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+    }
 
 
 

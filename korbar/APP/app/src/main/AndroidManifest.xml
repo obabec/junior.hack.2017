@@ -18,7 +18,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".SettingsActivity" />
-        <activity android:name=".LightControllActivity"></activity>
+        <activity android:name=".LightControllActivity" />
+        <activity android:name=".LockControllActivity"></activity>
     </application>
 
 </manifest>
