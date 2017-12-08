@@ -43,57 +43,58 @@ def getDtb():
 
     for row in results:
 
-        print("SUCKERINO: "+str(currentline)+" "+str(row[0]))
+        #print("SUCKERINO: "+str(currentline)+" "+str(row[0]))
         if currentline == 0:
-            #print(row[0])
+            print(row[0])
 
             # Setting maximal F, our 10mm led has max 1500 Hz so we will use 1000 Hz
-            led_pwm1 = GPIO.PWM(svetlo_pin1, 1000)
+            #led_pwm1 = GPIO.PWM(svetlo_pin1, 1000)
 
             # Procentuali nastaveni intenzity svetla
-            led_pwm1.start(100)
-            led_pwm1.ChangeDutyCycle(int(row[0]))
+            #led_pwm1.start(100)
+            #led_pwm1.ChangeDutyCycle(int(row[0]))
 
         if currentline == 1:
-            # print("Now you are fucked for second time")
+            print("Now you are fucked for second time")
 
             # Setting maximal F, our 10mm led has max 1500 Hz so we will use 1000 Hz
-            led_pwm2 = GPIO.PWM(svetlo_pin1, 1000)
+            """led_pwm2 = GPIO.PWM(svetlo_pin1, 1000)
 
             # Procentuali nastaveni intenzity svetla
             led_pwm2.start(100)
-            led_pwm2.ChangeDutyCycle(int(row[0]))
+            led_pwm2.ChangeDutyCycle(int(row[0]))"""
 
 
         if currentline == 2:
-            # print("Now 3 times")
+            print("Now 3 times")
+            """
 
             # Setting maximal F, our 10mm led has max 1500 Hz so we will use 1000 Hz
             led_pwm3 = GPIO.PWM(svetlo_pin3, 1000)
 
             # Procentuali nastaveni intenzity svetla
             led_pwm3.start(100)
-            led_pwm3.ChangeDutyCycle(int(row[0]))
+            led_pwm3.ChangeDutyCycle(int(row[0]))"""
 
 
         if currentline == 3:
-            #print("Now 4 times! ")
+            print("Now 4 times! ")
 
             # Setting maximal F, our 10mm led has max 1500 Hz so we will use 1000 Hz
-            led_pwm4 = GPIO.PWM(svetlo_pin4, 1000)
+            """led_pwm4 = GPIO.PWM(svetlo_pin4, 1000)
 
             # Procentuali nastaveni intenzity svetla
             led_pwm4.start(100)
-            led_pwm4.ChangeDutyCycle(int(row[0]))
+            led_pwm4.ChangeDutyCycle(int(row[0]))"""
 
         if currentline == 4:
 
-            # Setting maximal F, our 10mm led has max 1500 Hz so we will use 1000 Hz
+            """# Setting maximal F, our 10mm led has max 1500 Hz so we will use 1000 Hz
             led_pwm5 = GPIO.PWM(svetlo_pin5, 1000)
 
             # Procentuali nastaveni intenzity svetla
             led_pwm5.start(100)
-            led_pwm5.ChangeDutyCycle(int(row[0]))
+            led_pwm5.ChangeDutyCycle(int(row[0]))"""
 
         if currentline == 5:
             print("5")
