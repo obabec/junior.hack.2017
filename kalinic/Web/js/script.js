@@ -9,3 +9,8 @@ function range() {
 	var s4 = $("#s4").val();
 	$("#l4").css("opacity", "0."+s4); 
 }
+function check(){
+	if ($("#c1").is(':checked')) {
+		alert('Ko');
+	}
+}
