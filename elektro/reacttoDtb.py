@@ -3,6 +3,8 @@ import MySQLdb
 
 def getDtb():
 
+    GPIO.setmode(GPIO.BOARD)
+
     #setup phase
     svetlo_pin1 = 18
     GPIO.setup(svetlo_pin1, GPIO.OUT)
@@ -23,15 +25,14 @@ def getDtb():
 
 
 
-    db = MySQLdb.connect("10.10.5.234", "", "", "kappa")
+    db = MySQLdb.connect("10.10.5.234", "root", "pokemon123", "hackathonn")
 
     cursor = db.cursor()
-    sql = "select Stav from kappaTable"
+    sql = "select argument from pins"
     cursor.execute(sql)
     results = cursor.fetchall()
 
     currentLine = 0
-    GPIO.setmode(GPIO.BOARD)
 
     for row in results:
         #print("SUCKERINO: "+str(k)+" "+str(row[0]))
@@ -87,25 +88,25 @@ def getDtb():
             led_pwm5.ChangeDutyCycle(int(row[0]))
 
         if currentLine == 5:
-
+            print("5")
 
         if currentLine == 6:
-
+            print("6")
 
         if currentLine == 7:
-
+            print("7")
 
         if currentLine == 8:
-
+            print("8")
 
         if currentLine == 9:
-
+            print("9")
 
         if currentLine == 10:
-
+            print("10")
 
         if currentLine == 11:
-
+            print("11")
 
 
       currentLine = currentLine + 1
