@@ -1,7 +1,7 @@
 import MySQLdb
 import RPi.GPIO as GPIO
 import time
-time.sleep(15)
+#time.sleep(15)
 
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BOARD)
@@ -103,7 +103,7 @@ def getDtb():
         if currentline == 6:
             # Heat
             #print(row[0])
-            if int(row[0] == 1):
+            if int(int(row[0]) == 1):
                 print("HEAT STARTED na indexu: " + heatIndex)
                 heat_pwn.ChangeDutyCycle(heatIndex)
                 heatIndex = heatIndex - 5
