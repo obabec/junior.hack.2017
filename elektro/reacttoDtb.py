@@ -28,7 +28,7 @@ GPIO.setup(svetlo_pin5, GPIO.OUT)
 
 #Starting phase
 led_pwm1 = GPIO.PWM(svetlo_pin1, 1000)
-led_pwm1.start(0)
+led_pwm1.start(100)
 
 led_pwm2 = GPIO.PWM(svetlo_pin2, 1000)
 led_pwm2.start(0)
