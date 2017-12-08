@@ -29,7 +29,6 @@ svetlo_pin5 = 18
 GPIO.setup(svetlo_pin5, GPIO.OUT)
 
 heat_pin = 13
-GPIO.setup(heat_pin, GPIO.OUT)
 
 
 #Starting phase
@@ -96,9 +95,11 @@ def getDtb():
             # Heat
             print(row[0])
             if int(row[0]) == 1:
+                GPIO.setup(heat_pin, GPIO.OUT)
                 GPIO.output(heat_pin, GPIO.HIGH)
             else:
                 GPIO.output(heat_pin, GPIO.LOW)
+                GPIO.output(heat_pin, GPIO.IN)
 
         if currentline == 6:
            print("")
