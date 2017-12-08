@@ -99,7 +99,7 @@ def getDtb():
                 GPIO.output(heat_pin, GPIO.HIGH)
             else:
                 GPIO.output(heat_pin, GPIO.LOW)
-                GPIO.output(heat_pin, GPIO.IN)
+                GPIO.setup(heat_pin, GPIO.IN)
 
         if currentline == 6:
            print("")
