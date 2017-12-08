@@ -34,12 +34,12 @@ def getDtb():
     cursor.execute(sql)
     results = cursor.fetchall()
 
-    currentLine = 0
+    currentline = 0
 
     for row in results:
 
-        print("SUCKERINO: "+str(currentLine)+" "+str(row[0]))
-        if currentLine == 0:
+        print("SUCKERINO: "+str(currentline)+" "+str(row[0]))
+        if currentline == 0:
             #print(row[0])
 
             # Setting maximal F, our 10mm led has max 1500 Hz so we will use 1000 Hz
@@ -49,7 +49,7 @@ def getDtb():
             led_pwm1.start(100)
             led_pwm1.ChangeDutyCycle(int(row[0]))
 
-        if currentLine == 1:
+        if currentline == 1:
             # print("Now you are fucked for second time")
 
             # Setting maximal F, our 10mm led has max 1500 Hz so we will use 1000 Hz
@@ -60,7 +60,7 @@ def getDtb():
             led_pwm2.ChangeDutyCycle(int(row[0]))
 
 
-        if currentLine == 2:
+        if currentline == 2:
             # print("Now 3 times")
 
             # Setting maximal F, our 10mm led has max 1500 Hz so we will use 1000 Hz
@@ -71,7 +71,7 @@ def getDtb():
             led_pwm3.ChangeDutyCycle(int(row[0]))
 
 
-        if currentLine == 3:
+        if currentline == 3:
             #print("Now 4 times! ")
 
             # Setting maximal F, our 10mm led has max 1500 Hz so we will use 1000 Hz
@@ -81,7 +81,7 @@ def getDtb():
             led_pwm4.start(100)
             led_pwm4.ChangeDutyCycle(int(row[0]))
 
-        if currentLine == 4:
+        if currentline == 4:
 
             # Setting maximal F, our 10mm led has max 1500 Hz so we will use 1000 Hz
             led_pwm5 = GPIO.PWM(svetlo_pin5, 1000)
@@ -90,33 +90,31 @@ def getDtb():
             led_pwm5.start(100)
             led_pwm5.ChangeDutyCycle(int(row[0]))
 
-        if currentLine == 5:
+        if currentline == 5:
             print("5")
 
-        if currentLine == 6:
+        if currentline == 6:
             print("6")
 
-        if currentLine == 7:
+        if currentline == 7:
             print("7")
 
-        if currentLine == 8:
+        if currentline == 8:
             print("8")
 
-        if currentLine == 9:
+        if currentline == 9:
             print("9")
 
-        if currentLine == 10:
+        if currentline == 10:
             print("10")
 
-        if currentLine == 11:
+        if currentline == 11:
             print("11")
 
-
-
-    currentLine = currentLine + 1
+    currentline += 1
     db.close()
 
-    #setup phase
+    # setup phase
     GPIO.setup(svetlo_pin1, GPIO.IN)
 
     GPIO.setup(svetlo_pin2, GPIO.IN)
