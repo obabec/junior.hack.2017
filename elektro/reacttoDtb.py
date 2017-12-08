@@ -17,19 +17,19 @@ stavzamku = 0
 svetlo_pin1 = 11
 GPIO.setup(svetlo_pin1, GPIO.OUT)
 
-svetlo_pin2 = 18
+svetlo_pin2 = 12
 GPIO.setup(svetlo_pin2, GPIO.OUT)
 
-svetlo_pin3 = 18
+svetlo_pin3 = 13
 GPIO.setup(svetlo_pin3, GPIO.OUT)
 
-svetlo_pin4 = 18
+svetlo_pin4 = 15
 GPIO.setup(svetlo_pin4, GPIO.OUT)
 
-svetlo_pin5 = 18
+svetlo_pin5 = 16
 GPIO.setup(svetlo_pin5, GPIO.OUT)
 
-heat_pin = 13
+heat_pin = 18
 GPIO.setup(heat_pin, GPIO.OUT)
 
 #Starting phase
@@ -110,16 +110,16 @@ def getDtb():
 
         if currentline == 6:
            print("")
-
+           # voda
+           # print(row[0])
+           if int(row[0]) == 1:
+               waterStatus = waterStatus - (1 / 2)
 
         if currentline == 7:
             # voda
             #print(row[0])
             if int(row[0]) == 1:
                 waterStatus = waterStatus - (1/2)
-
-
-
 
         if currentline == 8:
             # voda
@@ -134,12 +134,6 @@ def getDtb():
                 waterStatus = waterStatus - (1/2)
 
         if currentline == 10:
-            # voda
-            #print(row[0])
-            if int(row[0]) == 1:
-                waterStatus = waterStatus - (1/2)
-
-        if currentline == 11:
             print("")
             if int(row[0]) == 1:
                 if (stavzamku == 1):
@@ -154,30 +148,29 @@ def getDtb():
                     GPIO.output(MotorPin, GPIO.LOW)
                     stavzamku = 0
             else:
-                if(stavzamku == 1):
+                if (stavzamku == 1):
                     GPIO.output(MotorPin2, GPIO.HIGH)
                     time.sleep(0.5)
                     GPIO.output(MotorPin2, GPIO.LOW)
                     stavzamku = 1
 
-                if(stavzamku == 0):
+                if (stavzamku == 0):
                     GPIO.output(MotorPin, GPIO.HIGH)
                     time.sleep(0.5)
                     GPIO.output(MotorPin, GPIO.LOW)
                     stavzamku = 0
 
 
-
-        """if (numberOfWaterMinus % 50) == 0:
+        if (numberOfWaterMinus % 50) == 0:
             print("Updatuju!")
             dbWater = MySQLdb.connect("localhost", "root", "pokemon123", "hackathonn")
             cursorWater = dbWater.cursor()
 
 
             sqlWater = "UPDATE pins SET argument = %d WHERE id = 12"
-            cursorWater.execute(sqlWater,waterStatus)
+            cursorWater.execute(sqlWater, waterStatus)
 
-        numberOfWaterMinus = numberOfWaterMinus + 1"""
+        numberOfWaterMinus = numberOfWaterMinus + 1
         currentline = 1 + currentline
 
 if __name__=='__main__':
