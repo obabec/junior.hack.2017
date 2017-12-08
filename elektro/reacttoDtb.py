@@ -8,6 +8,8 @@ cursor = db.cursor()
 sql = "select argument from pins"
 
 # Setting maximal F, our 10mm led has max 1500 Hz so we will use 1000 Hz
+svetlo_pin1 = 18
+GPIO.setup(svetlo_pin1, GPIO.OUT)
 
 led_pwm1 = GPIO.PWM(svetlo_pin1, 1000)
 led_pwm1.start(0)
@@ -20,8 +22,7 @@ def getDtb():
     GPIO.setmode(GPIO.BOARD)
 
     #setup phase
-    svetlo_pin1 = 18
-    GPIO.setup(svetlo_pin1, GPIO.OUT)
+
 
     svetlo_pin2 = 18
     GPIO.setup(svetlo_pin2, GPIO.OUT)
@@ -121,7 +122,6 @@ def getDtb():
     currentline += 1
 
     # setup phase
-    GPIO.setup(svetlo_pin1, GPIO.IN)
 
     GPIO.setup(svetlo_pin2, GPIO.IN)
 
