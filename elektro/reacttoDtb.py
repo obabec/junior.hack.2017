@@ -9,6 +9,7 @@ GPIO.setmode(GPIO.BOARD)
 results = 0
 numberOfWaterMinus = 0
 waterStatus = 500
+heatIndex = 100
 
 # Setting maximal F, our 10mm led has max 1500 Hz so we will use 1000 Hz
 #setup phase
@@ -28,6 +29,9 @@ GPIO.setup(svetlo_pin4, GPIO.OUT)
 svetlo_pin5 = 18
 GPIO.setup(svetlo_pin5, GPIO.OUT)
 
+heat_pin = 13
+GPIO.setup(heat_pin, GPIO.OUT)
+
 
 #Starting phase
 led_pwm1 = GPIO.PWM(svetlo_pin1, 1000)
@@ -44,6 +48,9 @@ led_pwm4.start(0)
 
 led_pwm5 = GPIO.PWM(svetlo_pin5, 1000)
 led_pwm5.start(0)
+
+heat_pwn = GPIO.PWM(heat_pin,750)
+heat_pwn.start(0)
 
 
 def getDtb():
@@ -94,7 +101,16 @@ def getDtb():
             #led_pwm1.ChangeDutyCycle(50)
 
         if currentline == 6:
+            # Heat
             print(row[0])
+            if int(row[0] == 1):
+                heat_pwn.ChangeDutyCycle(heatIndex)
+                heatIndex = heatIndex - 5
+                    if heatIndex == -5:
+                        heatIndex = 100
+            else
+                heat_pwn.ChangeDutyCycle(0                            ,)
+
 
         if currentline == 7:
             # voda
