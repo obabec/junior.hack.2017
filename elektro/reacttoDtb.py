@@ -35,7 +35,8 @@ def getDtb():
     currentLine = 0
 
     for row in results:
-        #print("SUCKERINO: "+str(k)+" "+str(row[0]))
+
+        print("SUCKERINO: "+str(k)+" "+str(row[0]))
         if currentLine == 0:
             #print(row[0])
 
