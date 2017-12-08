@@ -4,5 +4,5 @@
 
 cd /
 cd home/pi/Documents/junior.hack.2017/elektro/
-sudo python scanSer.py
+sudo python scanSerial.py
 cd /
