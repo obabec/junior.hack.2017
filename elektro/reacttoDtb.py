@@ -2,7 +2,7 @@ import MySQLdb
 
 
 def getDtb():
-
+    GPIO.setwarnings(False)
     GPIO.setmode(GPIO.BOARD)
 
     #setup phase
