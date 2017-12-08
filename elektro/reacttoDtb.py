@@ -9,19 +9,19 @@ def getDtb():
 
     #setup phase
     svetlo_pin1 = 18
-    GPIO.setup(svetlo_pin1, GPIO.OUT)
+    #GPIO.setup(svetlo_pin1, GPIO.OUT)
 
     svetlo_pin2 = 18
-    GPIO.setup(svetlo_pin2, GPIO.OUT)
+    #GPIO.setup(svetlo_pin2, GPIO.OUT)
 
     svetlo_pin3 = 18
-    GPIO.setup(svetlo_pin3, GPIO.OUT)
+    #GPIO.setup(svetlo_pin3, GPIO.OUT)
 
     svetlo_pin4 = 18
-    GPIO.setup(svetlo_pin4, GPIO.OUT)
+    #GPIO.setup(svetlo_pin4, GPIO.OUT)
 
     svetlo_pin5 = 18
-    GPIO.setup(svetlo_pin5, GPIO.OUT)
+    #GPIO.setup(svetlo_pin5, GPIO.OUT)
 
 
 
@@ -114,7 +114,7 @@ def getDtb():
 
     currentLine = currentLine + 1
     db.close()
-    
+
 
 if __name__=='__main__':
     while True:
