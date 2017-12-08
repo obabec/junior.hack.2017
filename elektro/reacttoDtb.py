@@ -109,7 +109,7 @@ def getDtb():
             print("11")
 
 
-      currentLine = currentLine + 1
+    currentLine = currentLine + 1
     db.close()
 
 if __name__=='__main__':
