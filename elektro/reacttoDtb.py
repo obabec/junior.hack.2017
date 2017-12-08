@@ -104,7 +104,7 @@ def getDtb():
         if currentline == 11:
             print(row[0])
 
-    currentline = 1 + currentline
+        currentline = 1 + currentline
 
 if __name__=='__main__':
     while True:
