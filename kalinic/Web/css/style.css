@@ -33,9 +33,15 @@ h1{
 	background
 }
 .bloky{
+	display: inline-block;
 	width: 20%;
 	margin: 0 2.5%;
 	background-color: red;
+	overflow: hidden;
+}
+.light{
+	width: 100%;
+	position: relative;
 }
 .logo{
 	z-index: 3;
