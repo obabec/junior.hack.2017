@@ -83,25 +83,25 @@ def getDtb():
            led_pwm5.ChangeDutyCycle(int(row[0]))
 
         if currentline == 5:
-            print("5")
+            print(row[0])
 
         if currentline == 6:
-            print("6")
+            print(row[0])
 
         if currentline == 7:
-            print("7")
+            print(row[0])
 
         if currentline == 8:
-            print("8")
+            print(row[0])
 
         if currentline == 9:
-            print("9")
+            print(row[0])
 
         if currentline == 10:
-            print("10")
+            print(row[0])
 
         if currentline == 11:
-            print("11")
+            print(row[0])
 
     currentline += 1
 
