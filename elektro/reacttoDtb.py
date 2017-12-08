@@ -82,6 +82,7 @@ def getDtb():
         if currentline == 5:
             print(row[0])
             led_pwm1.ChangeDutyCycle(50)
+            sleep(5)
 
         if currentline == 6:
             print(row[0])
