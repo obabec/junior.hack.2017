@@ -9,12 +9,11 @@ GPIO.setmode(GPIO.BOARD)
 results = 0
 numberOfWaterMinus = 0
 waterStatus = 500
-heatindex = 100
 
 # Setting maximal F, our 10mm led has max 1500 Hz so we will use 1000 Hz
 #setup phase
 
-svetlo_pin1 = 13
+svetlo_pin1 = 11
 GPIO.setup(svetlo_pin1, GPIO.OUT)
 
 svetlo_pin2 = 18
@@ -29,7 +28,7 @@ GPIO.setup(svetlo_pin4, GPIO.OUT)
 svetlo_pin5 = 18
 GPIO.setup(svetlo_pin5, GPIO.OUT)
 
-heat_pin = 11
+heat_pin = 13
 GPIO.setup(heat_pin, GPIO.OUT)
 
 
@@ -49,13 +48,10 @@ led_pwm4.start(0)
 led_pwm5 = GPIO.PWM(svetlo_pin5, 1000)
 led_pwm5.start(0)
 
-heat_pwn = GPIO.PWM(heat_pin, 750)
-heat_pwn.start(0)
 
 
 def getDtb():
 
-    global heatindex
     db = MySQLdb.connect("localhost", "root", "pokemon123", "hackathonn")
 
     cursor = db.cursor()
@@ -100,14 +96,9 @@ def getDtb():
             # Heat
             print(row[0])
             if int(row[0]) == 1:
-                print("HEAT STARTED na indexu: %s", str(heatindex))
-                heat_pwn.ChangeDutyCycle(heatindex)
-                heatindex = heatindex - 5
-                if heatindex == -5:
-                    heatindex = 100
+                GPIO.output(heat_pin, GPIO.HIGH)
             else:
-                heat_pwn.ChangeDutyCycle(0)
-                print("HEAT KILLED")
+                GPIO.output(heat_pin, GPIO.LOW)
 
         if currentline == 6:
            print("")
