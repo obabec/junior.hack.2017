@@ -3,6 +3,7 @@ import RPi.GPIO as GPIO
 
 def getDtb():
     results = None
+    currentLine = None
     GPIO.setwarnings(False)
     GPIO.setmode(GPIO.BOARD)
 
