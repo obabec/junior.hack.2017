@@ -2,11 +2,13 @@
 <html>
 <head>
 	<title>Home_OS</title>
+	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css">
 
 </head>
 <body>
+	<!-- <div class="load"><img src="img/intro.gif"></div> -->
 
 	<div id="fullpage">
 
@@ -26,32 +28,26 @@
 
 		</section>
 
-		<!-- schová vše před loadem -->
-			
-		<section class="section-bg section hide">
-			<nav class="navbar">
-				<div class="menu">
-					<div class="menu-span"></div>
-					<div class="menu-span"></div>
-					<div class="menu-span"></div>
-				</div>
-			</nav>
+		<section class="section-bg section">
 			<div class="content">
 				<h1>LIGHTS</h1>	
 				<form>
+				<div class="bloky"></div>
+					<input type="range" name="">
+				</form>
+				<div class="bloky"></div>
+					<input type="range" name="">
+				</form>
+				<div class="bloky"></div>
+					<input type="range" name="">
+				</form>
+				<div class="bloky"></div>
 					<input type="range" name="">
 				</form>
 			</div>
 		</section>
 
-		<section class="section-bg section hide">
-			<nav class="navbar">
-				<div class="menu">
-					<div class="menu-span"></div>
-					<div class="menu-span"></div>
-					<div class="menu-span"></div>
-				</div>
-			</nav>
+		<section class="section-bg section">
 			<div class="content">
 				<h1>WATER</h1>
 			
@@ -70,7 +66,8 @@
 <script type="text/javascript">
     $(document).ready(function() {
         $('#fullpage').fullpage();
-        $('.hide').css("display", "block");
+       // setTimeout(function(){ $('.hide').css("opacity", "1"); }, 3000);
+        
     });
 
 </script>
