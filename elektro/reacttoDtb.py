@@ -100,7 +100,7 @@ def getDtb():
             # Heat
             print(row[0])
             if int(row[0]) == 1:
-                print("HEAT STARTED na indexu: " + heatindex)
+                print("HEAT STARTED na indexu: %s", str(heatindex))
                 heat_pwn.ChangeDutyCycle(heatindex)
                 heatindex = heatindex - 5
                 if heatindex == -5:
