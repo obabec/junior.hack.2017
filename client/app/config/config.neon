@@ -29,6 +29,7 @@ extensions:
 
 
 services:
+    DbModel: App\Models\DbModel
     scriptManager: ApiModule\Managers\ScriptManager
     homeModel: App\Models\HomeModel
     router: App\RouterFactory::createRouter
