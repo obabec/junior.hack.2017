@@ -99,9 +99,9 @@ def getDtb():
             # Heat
             print(row[0])
             if int(row[0]) == 1:
+                heatIndex = heatIndex - 5
                 print("HEAT STARTED na indexu: " + heatIndex)
                 heat_pwn.ChangeDutyCycle(heatIndex)
-                heatIndex = heatIndex - 5
                 if heatIndex == -5:
                     heatIndex = 100
             else:
