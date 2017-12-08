@@ -114,7 +114,7 @@ def getDtb():
 
     currentLine = currentLine + 1
     db.close()
-    results = None
+    
 
 if __name__=='__main__':
     while True:
