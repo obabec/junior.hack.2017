@@ -1,5 +1,5 @@
 import MySQLdb
-
+import RPi.GPIO as GPIO
 
 def getDtb():
     GPIO.setwarnings(False)
@@ -24,7 +24,7 @@ def getDtb():
 
 
 
-
+jh
     db = MySQLdb.connect("10.10.5.234", "root", "pokemon123", "hackathonn")
 
     cursor = db.cursor()
