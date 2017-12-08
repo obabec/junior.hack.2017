@@ -57,6 +57,7 @@ GPIO.setup(MotorPin2,GPIO.OUT)
 
 
 def getDtb():
+    global numberOfWaterMinus
 
     db = MySQLdb.connect("localhost", "root", "pokemon123", "hackathonn")
 
