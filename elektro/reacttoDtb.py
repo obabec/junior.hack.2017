@@ -96,11 +96,6 @@ def getDtb():
            led_pwm5.ChangeDutyCycle(int(row[0]))
 
         if currentline == 5:
-            print("")
-
-            #led_pwm1.ChangeDutyCycle(50)
-
-        if currentline == 6:
             # Heat
             print(row[0])
             if int(row[0]) == 1:
@@ -112,6 +107,9 @@ def getDtb():
             else:
                 heat_pwn.ChangeDutyCycle(0)
                 print("HEAT KILLED")
+
+        if currentline == 6:
+           print("")
 
 
         if currentline == 7:
