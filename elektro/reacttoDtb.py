@@ -10,7 +10,7 @@ led_pwm1 = 0
 
 def getDtb():
 
-
+    led_pwm1 = 0
     GPIO.setwarnings(False)
     GPIO.setmode(GPIO.BOARD)
 
@@ -51,7 +51,7 @@ def getDtb():
             if led_pwm1 == 0:
                 led_pwm1 = GPIO.PWM(svetlo_pin1, 1000)
                 led_pwm1.start(100)
-                
+
             # Procentuali nastaveni intenzity svetla
             led_pwm1.ChangeDutyCycle(int(row[0]))
 
