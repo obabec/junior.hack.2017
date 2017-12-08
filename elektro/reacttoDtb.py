@@ -74,35 +74,35 @@ def getDtb():
     for row in results:
 
         if currentline == 0:
-            print(row[0])
+            #print(row[0])
             led_pwm1.ChangeDutyCycle(int(row[0]))
 
         if currentline == 1:
-            print(row[0])
+            #print(row[0])
             led_pwm2.ChangeDutyCycle(int(row[0]))
 
 
         if currentline == 2:
-           print(row[0])
+           #print(row[0])
            led_pwm3.ChangeDutyCycle(int(row[0]))
 
 
         if currentline == 3:
-            print(row[0])
+            #print(row[0])
             led_pwm4.ChangeDutyCycle(int(row[0]))
 
         if currentline == 4:
-           print(row[0])
+           #print(row[0])
            led_pwm5.ChangeDutyCycle(int(row[0]))
 
         if currentline == 5:
-            print(row[0])
+            #print(row[0])
 
             #led_pwm1.ChangeDutyCycle(50)
 
         if currentline == 6:
             # Heat
-            #print(row[0])
+            print(row[0])
             if int(row[0]) == 1:
                 print("HEAT STARTED na indexu: " + heatIndex)
                 heat_pwn.ChangeDutyCycle(heatIndex)
