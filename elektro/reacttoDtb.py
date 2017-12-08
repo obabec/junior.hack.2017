@@ -1,6 +1,7 @@
 import MySQLdb
 import RPi.GPIO as GPIO
 import time
+time.sleep(5)
 
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BOARD)
