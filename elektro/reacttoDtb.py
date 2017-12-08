@@ -2,8 +2,8 @@ import MySQLdb
 import RPi.GPIO as GPIO
 
 def getDtb():
-    results = None
-    currentLine = None
+
+
     GPIO.setwarnings(False)
     GPIO.setmode(GPIO.BOARD)
 
@@ -114,6 +114,7 @@ def getDtb():
 
     currentLine = currentLine + 1
     db.close()
+    results = None
 
 if __name__=='__main__':
     while True:
