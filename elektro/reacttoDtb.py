@@ -2,7 +2,7 @@ import MySQLdb
 
 
 def getDtb():
-    db = MySQLdb.connect("localhost", "root", "95123Lo", "kappa")
+    db = MySQLdb.connect("localhost", "", "", "kappa")
 
     cursor = db.cursor()
     sql = "select Stav from kappaTable"
