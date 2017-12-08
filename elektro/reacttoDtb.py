@@ -7,6 +7,8 @@ GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BOARD)
 
 results = 0
+numberOfWaterMinus = 0
+waterStatus = 500
 
 # Setting maximal F, our 10mm led has max 1500 Hz so we will use 1000 Hz
 #setup phase
@@ -47,12 +49,18 @@ led_pwm5.start(0)
 def getDtb():
 
     db = MySQLdb.connect("localhost", "root", "pokemon123", "hackathonn")
+
     cursor = db.cursor()
+
+
     sql = "select argument from pins"
+
 
     cursor.execute(sql)
 
+
     results = cursor.fetchall()
+
 
     currentline = 0
 
@@ -89,21 +97,46 @@ def getDtb():
             print(row[0])
 
         if currentline == 7:
+            # voda
             print(row[0])
+            if int(row[0]) == 1:
+                waterStatus = waterStatus - (1/2)
+
+
+
 
         if currentline == 8:
+            # voda
             print(row[0])
+            if int(row[0]) == 1:
+                waterStatus = waterStatus - (1/2)
 
         if currentline == 9:
+            # voda
             print(row[0])
+            if int(row[0]) == 1:
+                waterStatus = waterStatus - (1/2)
 
         if currentline == 10:
+            # voda
             print(row[0])
+            if int(row[0]) == 1:
+                waterStatus = waterStatus - (1/2)
 
         if currentline == 11:
             print(row[0])
 
+        if (numberOfWaterMinus % 50) == 0:
+            print("Updatuju!")
+            dbWater = MySQLdb.connect("localhost", "root", "pokemon123", "hackathonn")
+            cursorWater = dbWater.cursor()
+
+    
+            sqlWater = "UPDATE pins SET argument = %d WHERE id = 12"
+            cursorWater.execute(sqlWater,waterStatus)
+
         currentline = 1 + currentline
+        numberOfWaterMinus = numberOfWaterMinus + 1
 
 if __name__=='__main__':
     while True:
