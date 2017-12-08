@@ -96,7 +96,7 @@ def getDtb():
            led_pwm5.ChangeDutyCycle(int(row[0]))
 
         if currentline == 5:
-            print()
+            print("")
 
             #led_pwm1.ChangeDutyCycle(50)
 
@@ -116,7 +116,7 @@ def getDtb():
 
         if currentline == 7:
             # voda
-            print(row[0])
+            #print(row[0])
             if int(row[0]) == 1:
                 waterStatus = waterStatus - (1/2)
 
@@ -125,24 +125,24 @@ def getDtb():
 
         if currentline == 8:
             # voda
-            print(row[0])
+            #print(row[0])
             if int(row[0]) == 1:
                 waterStatus = waterStatus - (1/2)
 
         if currentline == 9:
             # voda
-            print(row[0])
+            #print(row[0])
             if int(row[0]) == 1:
                 waterStatus = waterStatus - (1/2)
 
         if currentline == 10:
             # voda
-            print(row[0])
+            #print(row[0])
             if int(row[0]) == 1:
                 waterStatus = waterStatus - (1/2)
 
         if currentline == 11:
-            print(row[0])
+            print("")
 
         """if (numberOfWaterMinus % 50) == 0:
             print("Updatuju!")
