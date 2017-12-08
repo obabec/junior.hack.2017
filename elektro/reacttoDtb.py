@@ -2,6 +2,8 @@ import MySQLdb
 import RPi.GPIO as GPIO
 import time
 
+results = 0
+
 def getDtb():
 
 
@@ -129,5 +131,7 @@ def getDtb():
 
 if __name__=='__main__':
     while True:
-        getDtb()
-        sleep(1)
+        try:
+            getDtb()
+        except:
+            print()
