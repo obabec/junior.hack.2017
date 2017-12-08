@@ -31,7 +31,8 @@ void loop() {
     Serial.print(" V\n"); 
     Serial.print(Watt);
     Serial.print(" W\n");
-    */Serial.print(Watth);
+    */
+    Serial.println(Watth);
 
   } else if (Current<0.1) {
     
