@@ -13,14 +13,32 @@ body,html{
 	font-family: HACKED;
 
 }
+h1{
+	font-size: 69px;
+	color: white;
+	width: 100%;
+}
+.hide{
+	display: none;
+	width: 100%;
+	height: 100%;
+}
+.load{
+	display: block;
+	z-index: 4;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	margin: 20% 30%;
+}
 .logo{
 	z-index: 3;
 	width: 100%;
 	max-height:250px;
+	vertical-align: middle;
+	padding: 20% 32%;
 }
-.logo-pic{
 
-}
 .navbar{
 	top:0;
 	width:100%;
@@ -46,6 +64,42 @@ body,html{
 	margin: 8px 0px;
 	border-radius: 2px;
 }
+.content{
+	top:0;
+	width: 70%;
+	margin: 0 15%;
+	position: relative;
+	z-index: 3;
+	background-color: red;
+}
+.fp-tableCell{
+	width: 100vw;
+}
+
+/*.glitch {
+  position: relative;
+}
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.glitch::before {
+  left: -3px;
+  text-shadow: -5px 0px red;
+  background: unset;
+}
+.glitch::after {
+  left: -2px;
+  text-shadow: -4px 0 blue;
+  background: unset;
+}
+*/
+
 /*SEKCE*/
 .uvod{
 	position: absolute;
@@ -59,7 +113,7 @@ body,html{
 	background-size: cover;
 	background-repeat: no-repeat;
 }
-.lights{
+.section-bg{
 	position: absolute;
 	z-index: 1;
 	display: block;
@@ -70,17 +124,4 @@ body,html{
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
-}
-.hide{
-	display: none;
-	width: 100%;
-	height: 100%;
-}
-.load{
-	display: block;
-	z-index: 4;
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	margin: 20% 30%;
 }
