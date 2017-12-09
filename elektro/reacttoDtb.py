@@ -59,6 +59,7 @@ GPIO.setup(MotorPin2,GPIO.OUT)
 def getDtb():
     global numberOfWaterMinus
     global waterStatus
+    global stavzamku
 
     db = MySQLdb.connect("localhost", "root", "pokemon123", "hackathonn")
 
@@ -145,7 +146,7 @@ def getDtb():
                     stavzamku = 1
 
                 if (stavzamku == 0):
-                    GPIO.output(MotorPin, GPIO.HIGH)
+                    GPIO.output(MotorPin, GPIO.HIGH)12
                     time.sleep(0.5)
                     GPIO.output(MotorPin, GPIO.LOW)
                     stavzamku = 0
