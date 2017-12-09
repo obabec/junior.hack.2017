@@ -26,7 +26,7 @@ public class LoadingActivity extends Activity {
             public void onFinish() {
                 Intent Zamer = new Intent(LoadingActivity.this,MainMenu.class);
                 startActivity(Zamer);
-                overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+
             }
         }.start();
 

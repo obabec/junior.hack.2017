@@ -48,6 +48,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/button_gray_click_effect"
+                android:onClick="StartWaterControll"
                 android:scaleType="centerCrop"
                 android:src="@drawable/water" />
 
