@@ -156,17 +156,17 @@ def getDtb():
             if int(row[0]) == 1:
                     if (stavzamku == 1):
                         GPIO.output(MotorPin2, GPIO.HIGH)
-                        time.sleep(0.5)
+                        time.sleep(2)
                         GPIO.output(MotorPin2, GPIO.LOW)
                         suckerino = 0
                         time.sleep(1)
 
                     if (stavzamku == 0):
                         GPIO.output(MotorPin, GPIO.HIGH)
-                        time.sleep(0.5)
+                        time.sleep(02)
                         GPIO.output(MotorPin, GPIO.LOW)
                         suckerino = 1
-
+                        time.sleep(1)
             stavzamku = suckerino
 
 
