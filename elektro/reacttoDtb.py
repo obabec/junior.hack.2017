@@ -116,25 +116,25 @@ def getDtb():
            # voda
            # print(row[0])
            if int(row[0]) == 1:
-               waterStatus = waterStatus - (1 / 2)
+               waterStatus = waterStatus - 1
 
         if currentline == 7:
             # voda
             #print(row[0])
             if int(row[0]) == 1:
-                waterStatus = waterStatus - (1/2)
+                waterStatus = waterStatus - 1
 
         if currentline == 8:
             # voda
             #print(row[0])
             if int(row[0]) == 1:
-                waterStatus = waterStatus - (1/2)
+                waterStatus = waterStatus - 1
 
         if currentline == 9:
             # voda
             #print(row[0])
             if int(row[0]) == 1:
-                waterStatus = waterStatus - (1/2)
+                waterStatus = waterStatus - 1
 
         if currentline == 10:
             print("")
@@ -171,6 +171,8 @@ def getDtb():
 
             cursorWater.execute("UPDATE pins SET argument = (%s) WHERE id = (%s)", (waterStatus, 12))
             print(waterStatus)
+            print(numberOfWaterMinus)
+            
         numberOfWaterMinus = numberOfWaterMinus + 1
         currentline = 1 + currentline
 
