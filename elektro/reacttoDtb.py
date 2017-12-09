@@ -12,6 +12,7 @@ results = 0
 numberOfWaterMinus = 0
 waterStatus = 500
 stavzamku = 0
+odpocetzamku = 200
 
 # Setting maximal F, our 10mm led has max 1500 Hz so we will use 1000 Hz
 #setup phase
@@ -72,6 +73,7 @@ def getDtb():
     global numberOfWaterMinus
     global waterStatus
     global stavzamku
+    global odpocetzamku
 
     db = MySQLdb.connect("localhost", "root", "pokemon123", "hackathonn")
 
@@ -151,17 +153,18 @@ def getDtb():
 
         if currentline == 10:
             if int(row[0]) == 1:
-                if (stavzamku == 1):
-                    GPIO.output(MotorPin2, GPIO.HIGH)
-                    time.sleep(0.5)
-                    GPIO.output(MotorPin2, GPIO.LOW)
-                    stavzamku = 0
+                if odpocetzamku == 200:
+                    if (stavzamku == 1):
+                        GPIO.output(MotorPin2, GPIO.HIGH)
+                        time.sleep(0.5)
+                        GPIO.output(MotorPin2, GPIO.LOW)
+                        stavzamku = 0
 
-                if (stavzamku == 0):
-                    GPIO.output(MotorPin, GPIO.HIGH)
-                    time.sleep(0.5)
-                    GPIO.output(MotorPin, GPIO.LOW)
-                    stavzamku = 1
+                    if (stavzamku == 0):
+                        GPIO.output(MotorPin, GPIO.HIGH)
+                        time.sleep(0.5)
+                        GPIO.output(MotorPin, GPIO.LOW)
+                        stavzamku = 1
 
 
         if (numberOfWaterMinus % 50) == 0:
@@ -170,6 +173,10 @@ def getDtb():
             print(waterStatus)
             print(numberOfWaterMinus)
 
+        if odpocetzamku == 0:
+            odpocetzamku = 200
+        else:
+            odpocetzamku = odpocetzamku - 1
         numberOfWaterMinus = numberOfWaterMinus + 1
         currentline = 1 + currentline
 
