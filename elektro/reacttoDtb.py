@@ -1,6 +1,8 @@
 import MySQLdb
 import RPi.GPIO as GPIO
 import time
+import subprocess
+
 #time.sleep(15)
 
 GPIO.setwarnings(False)
@@ -166,8 +168,7 @@ def getDtb():
 
         if (numberOfWaterMinus % 50) == 0:
             print("Updatuju!")
-            dbWater = MySQLdb.connect("localhost", "root", "pokemon123", "hackathonn")
-            cursorWater = dbWater.cursor()
+            subprocess.call("php /path/to/your/script.php")
 
             cursorWater.execute("UPDATE pins SET argument = %s WHERE id = %s", (str(waterStatus), str(12)))
             print(waterStatus)
