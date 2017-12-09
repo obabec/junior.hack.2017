@@ -159,6 +159,7 @@ def getDtb():
                         time.sleep(0.5)
                         GPIO.output(MotorPin2, GPIO.LOW)
                         suckerino = 0
+                        time.sleep(1)
 
                     if (stavzamku == 0):
                         GPIO.output(MotorPin, GPIO.HIGH)
