@@ -82,30 +82,24 @@ def getDtb():
     for row in results:
 
         if currentline == 0:
-            #print(row[0])
             led_pwm1.ChangeDutyCycle(int(row[0]))
 
         if currentline == 1:
-            #print(row[0])
             led_pwm2.ChangeDutyCycle(int(row[0]))
 
 
         if currentline == 2:
-           #print(row[0])
            led_pwm3.ChangeDutyCycle(int(row[0]))
 
 
         if currentline == 3:
-            #print(row[0])
             led_pwm4.ChangeDutyCycle(int(row[0]))
 
         if currentline == 4:
-           print(row[0])
            led_pwm5.ChangeDutyCycle(int(row[0]))
 
         if currentline == 5:
             # Heat
-            print(row[0])
             if int(row[0]) == 1:
 
                 GPIO.output(heat_pin, GPIO.HIGH)
@@ -114,32 +108,26 @@ def getDtb():
 
 
         if currentline == 6:
-           print("")
            # voda
-           # print(row[0])
            if int(row[0]) == 1:
                waterStatus = waterStatus - 0.2
 
         if currentline == 7:
             # voda
-            #print(row[0])
             if int(row[0]) == 1:
                 waterStatus = waterStatus - 0.2
 
         if currentline == 8:
             # voda
-            #print(row[0])
             if int(row[0]) == 1:
                 waterStatus = waterStatus - 0.2
 
         if currentline == 9:
             # voda
-            #print(row[0])
             if int(row[0]) == 1:
                 waterStatus = waterStatus - 0.2
 
         if currentline == 10:
-            print("")
             if int(row[0]) == 1:
                 if (stavzamku == 1):
                     GPIO.output(MotorPin2, GPIO.HIGH)
@@ -167,7 +155,6 @@ def getDtb():
 
 
         if (numberOfWaterMinus % 50) == 0:
-            print("Updatuju!")
             subprocess.call(["php", "-f", "test.php", str(waterStatus)])
 
             print(waterStatus)
