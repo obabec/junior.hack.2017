@@ -7,10 +7,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
-import android.widget.SeekBar;
-
-import org.json.JSONArray;
-import org.json.JSONObject;
+import android.widget.CompoundButton;
+import android.widget.Switch;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -23,27 +21,33 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class LockControllActivity extends Activity {
+public class HeatingActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lock_controll);
+        setContentView(R.layout.activity_heating);
+
+        ((Switch)findViewById(R.id.switch1)).setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b)
+                {
+                    ((CheckBox)findViewById(R.id.checkBox1)).setChecked(true);
+                    new AsyncLightTasks().execute("6","1");
+                }
+                else
+                {
+                    ((CheckBox)findViewById(R.id.checkBox1)).setChecked(false);
+                    new AsyncLightTasks().execute("6","0");
+                }
+            }
+        });
     }
 
-    public void Lock(View v)
-    {
-        if(((CheckBox)v).isChecked())
-        {
-            new AsyncGetLightTasks().execute("1");
-        }
-        else
-        {
-            new AsyncGetLightTasks().execute("0");
-        }
-    }
+    //id 6
 
-    private class AsyncGetLightTasks extends AsyncTask<String, String, String>
+    private class AsyncLightTasks extends AsyncTask<String, String, String>
     {
 
         HttpURLConnection conn;
@@ -57,7 +61,9 @@ public class LockControllActivity extends Activity {
         @Override
         protected String doInBackground(String... params) {
             try {
-                url = new URL("http://10.10.5.234/api/api/door?value="+params[0]);
+
+                url = new URL("http://10.10.5.234/api/api/light?id="+params[0]+"&value="+params[1]);
+
             } catch (MalformedURLException e) {
 
                 e.printStackTrace();
@@ -78,8 +84,8 @@ public class LockControllActivity extends Activity {
 
 
                 Uri.Builder builder = new Uri.Builder()
-                        .appendQueryParameter("id", " ")
-                        .appendQueryParameter("value", " ")
+                        .appendQueryParameter("id", params[0])
+                        .appendQueryParameter("value", params[1])
                         ;
                 String query = builder.build().getEncodedQuery();
 
@@ -132,11 +138,11 @@ public class LockControllActivity extends Activity {
         }
 
         @Override
-        protected void onPostExecute(String result)
-        {
-
+        protected void onPostExecute(String result) {
+            Log.e("pausda","asdasd");
         }
 
     }
+
 
 }

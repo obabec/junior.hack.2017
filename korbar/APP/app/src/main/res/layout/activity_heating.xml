@@ -4,28 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context="com.example.tomaskorb.homeos.HeatingActivity"
     android:background="@drawable/main_menu_background"
     android:orientation="vertical"
-    tools:context="com.example.tomaskorb.homeos.LockControllActivity">
+    >
 
     <include layout="@layout/action_bar"></include>
-    <com.example.tomaskorb.homeos.CustomFontTextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="60dp"
-        android:textColor="@android:color/white"
-        android:textAlignment="center"
-        android:text="Front door"
-        android:layout_marginTop="50dp"
-        />
 
     <CheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/checkBox1"
+        android:layout_marginTop="5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:button="@drawable/lock_checkbox"
-        android:onClick="Lock" />
+        android:button="@drawable/heating_checkbox"
+        android:clickable="false"
+        android:focusable="false"
+        />
 
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        />
 
 </LinearLayout>
