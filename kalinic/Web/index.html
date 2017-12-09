@@ -8,7 +8,7 @@
 
 </head>
 <body>
-	<!-- <div class="load"><img src="img/intro.gif"></div> -->
+	<div class="load"><img src="img/intro.gif" height="708px" width="1366px"></div> 
 
 	<div id="fullpage">
 
@@ -115,7 +115,7 @@
 		<section class="section-bg section">
 			<div class="content">
 				<h1>LOCK</h1>
-				<button>					
+				<button onclick="lock()">					
 					<div class="bloky">
 						<img src="img/unlocked.png" class="light">
 						<img src="img/locked.png" class="light2" id="lock">
@@ -123,6 +123,30 @@
 				</button>
 			</div>
 		</section>
+
+		<section class="section-bg section">
+			<div class="content">
+				<h1>HEATING</h1>
+									
+					<div >
+					<img src="img/heating.png" class="centr">
+					<input type="range" class="full" name="">
+					</div>
+				
+			</div>
+		</section>
+
+		<section class="section-bg section">
+			<div class="content">
+				<h1>PAYMENT</h1>
+									
+					<div >
+
+					</div>
+				
+			</div>
+		</section>
+
 
 
 	</div>
@@ -137,7 +161,9 @@
     $(document).ready(function() {
         $('#fullpage').fullpage();
         range();
-       // setTimeout(function(){ $('.hide').css("opacity", "1"); }, 3000);
+    	setTimeout(function(){ $('.load').css("display", "none"); }, 3000);
+    	setTimeout(function(){ $('#fullpage').css("opacity", "1"); }, 3000);
+    	
         
     });
 
