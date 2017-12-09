@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Doctrine\ORM\Cache\Persister\Collection\ReadOnlyCachedCollectionPersister;
 use Nette;
 use Nette\Application\Routers\Route;
 use Nette\Application\Routers\RouteList;
@@ -17,6 +18,8 @@ class RouterFactory
 	public static function createRouter()
 	{
 		$router = new RouteList;
+		$router[] = new Route('cash', 'Homepage:ChangeCash');
+		$router[] = new Route('topeni', 'Homepage:topeni');
 		$router[] = new Route('events','Homepage:events');
 		$router[] = new Route('door', 'Homepage:lock');
 		$router[] = new Route('read-light', 'Homepage:getLight');

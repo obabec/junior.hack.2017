@@ -5,7 +5,7 @@ require __DIR__ . '/../vendor/autoload.php';
 $configurator = new Nette\Configurator;
 
 if (isset($_COOKIE['debug']) && $_COOKIE['debug'] === 'hackathon') {
-$configurator->setDebugMode(true); // enable for your remote IP
+$configurator->setDebugMode(false); // enable for your remote IP
 }
 $configurator->enableTracy(__DIR__ . '/../log');
 

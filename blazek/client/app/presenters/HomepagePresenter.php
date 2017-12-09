@@ -33,11 +33,51 @@ class HomepagePresenter extends BasePresenter
 //        }
     }
 
+    public function actionChangeCash()
+    {
+        $response = $this->prepareResponse();
+        $params = $this->getParameters();
+
+        try {
+
+            if (!isset($params['value'])) {
+                throw new ApiException('Missing value');
+            }
+
+            if ($params['value'] < 0) {
+                throw new ApiException('Out of range');
+            }
+
+            $this->homeModel->getEntityManager()->getConnection()->update('tarif', [
+                'cash' => $params['value']
+            ], [
+                'id' => 1
+            ]);
+        } catch (ApiException $e) {
+          $response->setError($e->getMessage());
+        } catch (\Exception $e) {
+            $response->setError('An unexcepted error occurred.');
+            Debugger::log($e);
+        }
+        $this->sendJson($response);
+    }
+
+    public function actionTopeni()
+    {
+        $response = $this->prepareResponse();
+        $data = $this->homeModel->getEntityManager()->getConnection()->fetchColumn('SELECT argument FROM pins WHERE id = 6');
+
+        $response->setData($data);
+
+
+        $this->sendJson($response);
+    }
+
 
     public function actionEvents()
     {
         $response = $this->homeModel->getEntityManager()->getConnection()->fetchColumn('SELECT AVG(argument) FROM event');
-        $events = $this->homeModel->getEntityManager()->getConnection()->fetchColumn('SELECT * FROM event');
+        $events = $this->homeModel->getEntityManager()->getConnection()->fetchAll('SELECT * FROM event');
         $this->sendJson([$response, $events]);
     }
 
@@ -105,7 +145,7 @@ class HomepagePresenter extends BasePresenter
         try {
 
             if (!isset($parameters['id'])) {
-                throw new ApiException('Missiong id');
+                throw new ApiException('Missing id');
             }
 
             if (!isset($parameters['value'])) {

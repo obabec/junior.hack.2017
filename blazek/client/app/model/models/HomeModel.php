@@ -2,34 +2,27 @@
 /**
  * Created by PhpStorm.
  * User: Honza
- * Date: 04.12.2017
- * Time: 9:40
+ * Date: 09.12.2017
+ * Time: 9:13
  */
 
 namespace App\Models;
 
 
-use ApiModule\Managers\ScriptManager;
-use App\Exceptions\ApiException;
-use App\Exceptions\ScriptException;
+use Doctrine\ORM\Mapping\Entity;
 use Kdyby\Doctrine\EntityManager;
 
 class HomeModel
 {
-    /** @var  ScriptManager */
-    protected $scripManager;
 
     /** @var  EntityManager */
     protected $em;
-
     /**
      * HomeModel constructor.
-     * @param ScriptManager $scripManager
      * @param EntityManager $em
      */
-    public function __construct(ScriptManager $scripManager, EntityManager $em)
+    public function __construct(EntityManager $em)
     {
-        $this->scripManager = $scripManager;
         $this->em = $em;
     }
 
@@ -38,28 +31,32 @@ class HomeModel
      */
     public function zamnkout($argument)
     {
+//        $argument = (bool)$argument;
         $this->em->getConnection()->update('pins', [
-            'argument' => $argument
+            'argument' => 1
+        ], [
+            'id' => 11
+        ]);
+        sleep(2);
+        $this->em->getConnection()->update('pins', [
+            'argument' => 0
         ], [
             'id' => 11
         ]);
     }
-
     /**
      * @return array
      */
     public function readSvetlo()
     {
-        return $this->em->getConnection()->fetchAll('SELECT * FROM pins WHERE id <= 10');
+        return $this->em->getConnection()->fetchAll('SELECT * FROM pins');
     }
-
     public function prepniSvetle($id, $argument)
     {
         $this->em->getConnection()->update('pins', [
             'argument' => $argument
         ], ['id' =>$id]);
     }
-
     /**
      * @return EntityManager
      */
@@ -67,4 +64,5 @@ class HomeModel
     {
         return $this->em;
     }
+
 }
