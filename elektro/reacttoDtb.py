@@ -146,7 +146,7 @@ def getDtb():
                     stavzamku = 1
 
                 if (stavzamku == 0):
-                    GPIO.output(MotorPin, GPIO.HIGH)12
+                    GPIO.output(MotorPin, GPIO.HIGH)
                     time.sleep(0.5)
                     GPIO.output(MotorPin, GPIO.LOW)
                     stavzamku = 0
