@@ -176,9 +176,8 @@ def getDtb():
 
         if (numberOfWaterMinus % 50) == 0:
             print("Updatuju!")
-            subprocess.call("php /path/to/your/script.php")
+            subprocess.call("php /path/to/your/script.php %s", str(waterStatus))
 
-            cursorWater.execute("UPDATE pins SET argument = %s WHERE id = %s", (str(waterStatus), str(12)))
             print(waterStatus)
             print(numberOfWaterMinus)
 
