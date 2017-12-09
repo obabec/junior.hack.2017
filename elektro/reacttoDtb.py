@@ -176,7 +176,7 @@ def getDtb():
 
         if (numberOfWaterMinus % 50) == 0:
             print("Updatuju!")
-            subprocess.call("php /path/to/your/script.php %s", str(waterStatus))
+            subprocess.call(["php", "-f", "test.php", str(waterStatus)])
 
             print(waterStatus)
             print(numberOfWaterMinus)
