@@ -3,6 +3,17 @@
 
     <style name="AppTheme" parent="android:Theme.Holo.Light.NoActionBar.Fullscreen">
 
+        <item name="android:windowAnimationStyle">@style/transitions</item>
+        
+
     </style>
+
+    <style name="transitions">
+        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:windowExitAnimation">@android:anim/fade_out</item>
+
+    </style>
+
+
 
 </resources>

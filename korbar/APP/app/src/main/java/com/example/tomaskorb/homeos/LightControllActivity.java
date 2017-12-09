@@ -10,6 +10,9 @@ import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.Toast;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -27,6 +30,14 @@ public class LightControllActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_light_controll);
+
+        new AsyncGetLightTasks().execute();
+
+
+
+
+
+
 
         ((SeekBar)findViewById(R.id.Light1BrightnessController)).setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 
@@ -210,6 +221,148 @@ public class LightControllActivity extends Activity {
         }
 
     }
+
+    private class AsyncGetLightTasks extends AsyncTask<String, String, String>
+    {
+
+        HttpURLConnection conn;
+        URL url = null;
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+
+        }
+        @Override
+        protected String doInBackground(String... params) {
+            try {
+
+                url = new URL("http://10.10.5.234/api/api/read-lights");
+
+            } catch (MalformedURLException e) {
+
+                e.printStackTrace();
+                Log.e("hlaska","Spatne url");
+                return "exception";
+
+            }
+            try {
+
+                conn = (HttpURLConnection)url.openConnection();
+                conn.setReadTimeout(10000);
+                conn.setConnectTimeout(10000);
+                conn.setRequestMethod("POST");
+
+
+                conn.setDoInput(true);
+                conn.setDoOutput(true);
+
+
+                Uri.Builder builder = new Uri.Builder()
+                        .appendQueryParameter("id", " ")
+                        .appendQueryParameter("value", " ")
+                        ;
+                String query = builder.build().getEncodedQuery();
+
+
+                OutputStream os = conn.getOutputStream();
+                BufferedWriter writer = new BufferedWriter(
+                        new OutputStreamWriter(os, "UTF-8"));
+                writer.write(query);
+                writer.flush();
+                writer.close();
+                os.close();
+                conn.connect();
+
+            } catch (IOException e1) {
+                // TODO Auto-generated catch block
+                e1.printStackTrace();
+                Log.e("hlaska","Nemozno se pripojit");
+                return "exception";
+            }
+
+            try {
+
+                int response_code = conn.getResponseCode();
+
+
+                if (response_code == HttpURLConnection.HTTP_OK) {
+                    InputStream input = conn.getInputStream();
+                    BufferedReader reader = new BufferedReader(new InputStreamReader(input));
+                    StringBuilder result = new StringBuilder();
+                    String line;
+
+                    while ((line = reader.readLine()) != null) {
+                        result.append(line);
+                    }
+
+
+                    return(result.toString());
+
+                }else{
+                    return("unsuccessful");
+                }
+
+            } catch (IOException e) {
+                // e.printStackTrace();
+                Log.e("Chyba",e.getMessage());
+                return "exception";
+            } finally {
+                conn.disconnect();
+            }
+        }
+
+        @Override
+        protected void onPostExecute(String result)
+        {
+            try
+            {
+                JSONArray json2array;
+                JSONObject obj2;
+
+                JSONObject obj = new JSONObject(result);
+                JSONArray kappa = obj.getJSONArray("data");
+                json2array = kappa.getJSONArray(0);
+                obj2 = json2array.getJSONObject(0);
+                ((SeekBar)findViewById(R.id.Light1BrightnessController)).setProgress(obj2.getInt("argument"));
+                ((LightImageView)findViewById(R.id.Light1Brightness)).PercentOfLight = obj2.getInt("argument");
+                ((LightImageView)findViewById(R.id.Light1Brightness)).RedrawLightness();
+
+                json2array = kappa.getJSONArray(1);
+                obj2 = json2array.getJSONObject(0);
+                ((SeekBar)findViewById(R.id.Light2BrightnessController)).setProgress(obj2.getInt("argument"));
+                ((LightImageView)findViewById(R.id.Light2Brightness)).PercentOfLight = obj2.getInt("argument");
+                ((LightImageView)findViewById(R.id.Light2Brightness)).RedrawLightness();
+
+                json2array = kappa.getJSONArray(2);
+                obj2 = json2array.getJSONObject(0);
+                ((SeekBar)findViewById(R.id.Light3BrightnessController)).setProgress(obj2.getInt("argument"));
+                ((LightImageView)findViewById(R.id.Light3Brightness)).PercentOfLight = obj2.getInt("argument");
+                ((LightImageView)findViewById(R.id.Light3Brightness)).RedrawLightness();
+
+                json2array = kappa.getJSONArray(3);
+                obj2 = json2array.getJSONObject(0);
+                ((SeekBar)findViewById(R.id.Light4BrightnessController)).setProgress(obj2.getInt("argument"));
+                ((LightImageView)findViewById(R.id.Light4Brightness)).PercentOfLight = obj2.getInt("argument");
+                ((LightImageView)findViewById(R.id.Light4Brightness)).RedrawLightness();
+
+                Log.e("pause msg","asdas");
+
+
+
+            }
+            catch (Exception e)
+            {
+                Log.e("Chyba",e.getMessage());
+            }
+
+            Log.e("pausda","asdasd");
+        }
+
+    }
+
+
+
 
 
 }

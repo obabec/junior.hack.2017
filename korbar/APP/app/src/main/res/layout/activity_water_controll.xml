@@ -36,8 +36,10 @@
                 android:id="@+id/checkBox1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:button="@drawable/water_checkbox"
                 android:layout_gravity="center_horizontal"
+                android:button="@drawable/water_checkbox"
+                android:focusable="false"
+                android:clickable="false"
                 />
 
             <Switch
@@ -54,8 +56,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
 
             <com.example.tomaskorb.homeos.CustomFontTextView
                 android:layout_width="match_parent"
@@ -70,13 +71,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:button="@drawable/water_checkbox" />
+                android:button="@drawable/water_checkbox"
+                android:focusable="false"
+                android:clickable="false"
+                />
+
             <Switch
+                android:id="@+id/Switch2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:id="@+id/Switch2"
-                />
+                android:layout_gravity="center_horizontal" />
 
         </LinearLayout>
 
@@ -111,7 +115,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:button="@drawable/water_checkbox" />
+                android:button="@drawable/water_checkbox"
+                android:focusable="false"
+                android:clickable="false"
+                />
             <Switch
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -141,7 +148,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:button="@drawable/water_checkbox" />
+                android:button="@drawable/water_checkbox"
+                android:focusable="false"
+                android:clickable="false"
+                />
             <Switch
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
