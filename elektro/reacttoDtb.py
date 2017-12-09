@@ -48,8 +48,8 @@ led_pwm4.start(0)
 led_pwm5 = GPIO.PWM(svetlo_pin5, 1000)
 led_pwm5.start(0)
 
-MotorPin = 11
-MotorPin2 = 13
+MotorPin = 35
+MotorPin2 = 37
 
 GPIO.setup(MotorPin, GPIO.OUT)   # Set LedPin's mode is output
 GPIO.setup(MotorPin2,GPIO.OUT)
@@ -139,29 +139,37 @@ def getDtb():
         if currentline == 10:
             print("")
             if int(row[0]) == 1:
-                if (stavzamku == 1):
-                    GPIO.output(MotorPin2, GPIO.HIGH)
-                    time.sleep(0.5)
-                    GPIO.output(MotorPin2, GPIO.LOW)
-                    stavzamku = 1
+		GPIO.output(MotorPin2, GPIO.HIGH)
+		GPIO.output(MotorPin, GPIO.LOW)
+		time.sleep(0.5)
 
-                if (stavzamku == 0):
-                    GPIO.output(MotorPin, GPIO.HIGH)
-                    time.sleep(0.5)
-                    GPIO.output(MotorPin, GPIO.LOW)
-                    stavzamku = 0
-            else:
-                if (stavzamku == 1):
-                    GPIO.output(MotorPin2, GPIO.HIGH)
-                    time.sleep(0.5)
-                    GPIO.output(MotorPin2, GPIO.LOW)
-                    stavzamku = 1
+	    else:
+		GPIO.output(MotorPin2, GPIO.LOW)
+		GPIO.output(MotorPin, GPIO.HIGH)
+		time.sleep(0.4)
+                #if (stavzamku == 1):
+                    #GPIO.output(MotorPin2, GPIO.HIGH)
+                    #time.sleep(0.5)
+                    #GPIO.output(MotorPin2, GPIO.LOW)
+                    #stavzamku = 1
 
-                if (stavzamku == 0):
-                    GPIO.output(MotorPin, GPIO.HIGH)
-                    time.sleep(0.5)
-                    GPIO.output(MotorPin, GPIO.LOW)
-                    stavzamku = 0
+                #if (stavzamku == 0):
+                    #GPIO.output(MotorPin, GPIO.HIGH)
+                    #time.sleep(0.5)
+                    #GPIO.output(MotorPin, GPIO.LOW)
+                    #stavzamku = 0
+            #else:
+                #if (stavzamku == 1):
+                    #GPIO.output(MotorPin2, GPIO.HIGH)
+                    #time.sleep(0.5)
+                    #GPIO.output(MotorPin2, GPIO.LOW)
+                    #stavzamku = 1
+
+                #if (stavzamku == 0):
+                    #GPIO.output(MotorPin, GPIO.HIGH)
+                    #time.sleep(0.5)
+                    #GPIO.output(MotorPin, GPIO.LOW)
+                    #stavzamku = 0
 
 
         if (numberOfWaterMinus % 50) == 0:
