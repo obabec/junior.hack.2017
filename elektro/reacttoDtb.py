@@ -8,6 +8,7 @@ import subprocess
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BOARD)
 
+suckerino = 0
 results = 0
 numberOfWaterMinus = 0
 waterStatus = 500
@@ -70,7 +71,7 @@ GPIO.setup(MotorPin2,GPIO.OUT)
 
 
 def getDtb():
-    suckerino = 0
+    global suckerino
     global numberOfWaterMinus
     global waterStatus
     global stavzamku
@@ -167,6 +168,7 @@ def getDtb():
                         GPIO.output(MotorPin, GPIO.LOW)
                         suckerino = 1
                         time.sleep(1)
+
             stavzamku = int(suckerino)
 
 
