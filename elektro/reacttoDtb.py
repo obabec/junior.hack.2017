@@ -40,7 +40,7 @@ blue_pin2 = 29
 GPIO.setup(blue_pin2, GPIO.OUT)
 blue_pin3 = 31
 GPIO.setup(blue_pin3, GPIO.OUT)
-blue_pin4 = 33
+blue_pin4 = 40
 GPIO.setup(blue_pin4, GPIO.OUT)
 
 
