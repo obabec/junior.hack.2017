@@ -155,6 +155,7 @@ def getDtb():
 
         if currentline == 10:
             if int(row[0]) == 1:
+                print("ZAMEK PIN VALUE" + str(row[0]))
                     if (stavzamku == 1):
                         print("ZAMEK!")
                         GPIO.output(MotorPin2, GPIO.HIGH)
