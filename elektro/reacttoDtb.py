@@ -156,21 +156,23 @@ def getDtb():
         if currentline == 10:
             if int(row[0]) == 1:
                     if (stavzamku == 1):
+                        print("ZAMEK!")
                         GPIO.output(MotorPin2, GPIO.HIGH)
-                        time.sleep(2)
+                        time.sleep(1)
                         GPIO.output(MotorPin2, GPIO.LOW)
                         suckerino = 0
                         time.sleep(1)
 
                     if (stavzamku == 0):
+                        print("ZAMEK!")
                         GPIO.output(MotorPin, GPIO.HIGH)
-                        time.sleep(2)
+                        time.sleep(1)
                         GPIO.output(MotorPin, GPIO.LOW)
                         suckerino = 1
                         time.sleep(1)
 
             stavzamku = 0 + suckerino
-
+            print("STAV ZAMKU: "+str(stavzamku))
 
         if (numberOfWaterMinus % 50) == 0:
             subprocess.call(["php", "-f", "test.php", str(waterStatus)])
