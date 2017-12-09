@@ -38,12 +38,30 @@
 
 				<div class="bloky">
 					<img src="img/light.png" class="light">
-					<img src="img/light.png" class="light2" >
-					<input type="range" name="">
+					<img src="img/light_1.png" class="light2" id="l1">
+					<input type="range" name="" id="s1" onchange="range()">
+					
 				</div>
+
 				<div class="bloky">
-					<div class="light"></div>
-					<input type="range" name="">
+					<img src="img/light.png" class="light">
+					<img src="img/light_1.png" class="light2" id="l2">
+					<input type="range" name="" id="s2" onchange="range()">
+					
+				</div>
+				
+				<div class="bloky">
+					<img src="img/light.png" class="light">
+					<img src="img/light_1.png" class="light2" id="l3">
+					<input type="range" name="" id="s3" onchange="range()">
+					
+				</div>
+
+				<div class="bloky">
+					<img src="img/light.png" class="light">
+					<img src="img/light_1.png" class="light2" id="l4">
+					<input type="range" name="" id="s4" onchange="range()">
+					
 				</div>
 
 				</form>
@@ -56,9 +74,56 @@
 			<div class="content">
 				<h1>WATER</h1>
 			
-				
+					<div class="bloky">
+						<img src="img/water_off.png" class="light">
+						<img src="img/water_on.png" class="light2" id="d1">
+						<label class="switch">
+						  <input type="checkbox" id="c1" onclick="check()">
+						  <span class="slider round"></span>
+						</label>
+					</div>
+
+					<div class="bloky">
+						<img src="img/water_off.png" class="light">
+						<img src="img/water_on.png" class="light2" id="d2">
+						<label class="switch">
+						  <input type="checkbox" id="c2" checked  onclick="check()">
+						  <span class="slider round"></span>
+						</label>
+					</div>
+
+					<div class="bloky">
+						<img src="img/water_off.png" class="light">
+						<img src="img/water_on.png" class="light2" id="d3">
+						<label class="switch">
+						  <input type="checkbox" id="c3"  onclick="check()">
+						  <span class="slider round"></span>
+						</label>
+					</div>
+
+					<div class="bloky">
+						<img src="img/water_off.png" class="light">
+						<img src="img/water_on.png" class="light2" id="d4">
+						<label class="switch">
+						  <input type="checkbox" id="c4"  onclick="check()">
+						  <span class="slider round"></span>
+						</label>
+					</div>
 			</div>
 		</section>
+
+		<section class="section-bg section">
+			<div class="content">
+				<h1>LOCK</h1>
+				<button>					
+					<div class="bloky">
+						<img src="img/unlocked.png" class="light">
+						<img src="img/locked.png" class="light2" id="lock">
+					</div>
+				</button>
+			</div>
+		</section>
+
 
 	</div>
 
@@ -71,6 +136,7 @@
 <script type="text/javascript">
     $(document).ready(function() {
         $('#fullpage').fullpage();
+        range();
        // setTimeout(function(){ $('.hide').css("opacity", "1"); }, 3000);
         
     });
