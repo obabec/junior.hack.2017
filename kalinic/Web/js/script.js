@@ -36,6 +36,12 @@ function check(){
 	if (!document.getElementById("c4").checked) {
 		$("#d4").css("opacity", "0");
 	}
+	if (document.getElementById("c5").checked) {
+		$("#d5").css("opacity", "1");
+	}
+	if (!document.getElementById("c5").checked) {
+		$("#d5").css("opacity", "0");
+	}
 
 }
 var locker=0;
