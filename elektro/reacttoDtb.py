@@ -163,11 +163,11 @@ def getDtb():
 
                     if (stavzamku == 0):
                         GPIO.output(MotorPin, GPIO.HIGH)
-                        time.sleep(02)
+                        time.sleep(2)
                         GPIO.output(MotorPin, GPIO.LOW)
                         suckerino = 1
                         time.sleep(1)
-            stavzamku = suckerino
+            stavzamku = int(suckerino)
 
 
         if (numberOfWaterMinus % 50) == 0:
