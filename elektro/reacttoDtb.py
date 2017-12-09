@@ -118,25 +118,25 @@ def getDtb():
            # voda
            # print(row[0])
            if int(row[0]) == 1:
-               waterStatus = waterStatus - (1/5)
+               waterStatus = waterStatus - 0.2
 
         if currentline == 7:
             # voda
             #print(row[0])
             if int(row[0]) == 1:
-                waterStatus = waterStatus - (1/5)
+                waterStatus = waterStatus - 0.2
 
         if currentline == 8:
             # voda
             #print(row[0])
             if int(row[0]) == 1:
-                waterStatus = waterStatus - (1/5)
+                waterStatus = waterStatus - 0.2
 
         if currentline == 9:
             # voda
             #print(row[0])
             if int(row[0]) == 1:
-                waterStatus = waterStatus - (1/5)
+                waterStatus = waterStatus - 0.2
 
         if currentline == 10:
             print("")
