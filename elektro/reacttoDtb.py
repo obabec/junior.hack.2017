@@ -153,20 +153,19 @@ def getDtb():
 
         if currentline == 10:
             if int(row[0]) == 1:
-                if odpocetzamku == 200:
                     if (stavzamku == 1):
                         GPIO.output(MotorPin2, GPIO.HIGH)
                         time.sleep(0.5)
                         GPIO.output(MotorPin2, GPIO.LOW)
-                        stavzamku = 0
-                        break
+                        suckerino = 0
 
                     if (stavzamku == 0):
                         GPIO.output(MotorPin, GPIO.HIGH)
                         time.sleep(0.5)
                         GPIO.output(MotorPin, GPIO.LOW)
-                        stavzamku = 1
-                        break
+                        suckerino = 1
+                    
+            stavzamku = suckerino
 
 
         if (numberOfWaterMinus % 50) == 0:
@@ -175,10 +174,6 @@ def getDtb():
             print(waterStatus)
             print(numberOfWaterMinus)
 
-        if odpocetzamku == 0:
-            odpocetzamku = 200
-        else:
-            odpocetzamku = odpocetzamku - 1
         numberOfWaterMinus = numberOfWaterMinus + 1
         currentline = 1 + currentline
 
