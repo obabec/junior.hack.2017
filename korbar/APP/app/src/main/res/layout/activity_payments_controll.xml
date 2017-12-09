@@ -34,7 +34,7 @@
                 android:id="@+id/WaterConsumptionTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="123"
+                android:text=""
                 android:textAlignment="center"
                 android:textColor="@android:color/white"
                 android:textSize="30dp" />
@@ -55,7 +55,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@android:color/white"
-                android:text="123"
+                android:text=""
                 android:textAlignment="center"
                 android:textSize="30dp"
                 />
