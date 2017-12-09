@@ -8,10 +8,12 @@ import subprocess
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BOARD)
 
+suckerino = 0
 results = 0
 numberOfWaterMinus = 0
 waterStatus = 500
 stavzamku = 0
+odpocetzamku = 200
 
 # Setting maximal F, our 10mm led has max 1500 Hz so we will use 1000 Hz
 #setup phase
@@ -33,6 +35,16 @@ GPIO.setup(svetlo_pin5, GPIO.OUT)
 
 heat_pin = 18
 GPIO.setup(heat_pin, GPIO.OUT)
+
+blue_pin1 =  22
+GPIO.setup(blue_pin1, GPIO.OUT)
+blue_pin2 = 29
+GPIO.setup(blue_pin2, GPIO.OUT)
+blue_pin3 = 31
+GPIO.setup(blue_pin3, GPIO.OUT)
+blue_pin4 = 40
+GPIO.setup(blue_pin4, GPIO.OUT)
+
 
 #Starting phase
 led_pwm1 = GPIO.PWM(svetlo_pin1, 1000)
@@ -59,9 +71,11 @@ GPIO.setup(MotorPin2,GPIO.OUT)
 
 
 def getDtb():
+    global suckerino
     global numberOfWaterMinus
     global waterStatus
     global stavzamku
+    global odpocetzamku
 
     db = MySQLdb.connect("localhost", "root", "pokemon123", "hackathonn")
 
@@ -107,52 +121,59 @@ def getDtb():
                 GPIO.output(heat_pin, GPIO.LOW)
 
 
-        if currentline == 6:
+	if currentline == 6:
            # voda
            if int(row[0]) == 1:
                waterStatus = waterStatus - 0.2
+               GPIO.output(blue_pin1, GPIO.HIGH)
+           else:
+               GPIO.output(blue_pin1, GPIO.LOW)
 
         if currentline == 7:
             # voda
             if int(row[0]) == 1:
                 waterStatus = waterStatus - 0.2
+                GPIO.output(blue_pin2, GPIO.HIGH)
+            else:
+                GPIO.output(blue_pin2, GPIO.LOW)
 
         if currentline == 8:
-            # voda
+            # voda 
             if int(row[0]) == 1:
                 waterStatus = waterStatus - 0.2
+                GPIO.output(blue_pin3, GPIO.HIGH)
+            else:
+                GPIO.output(blue_pin3, GPIO.LOW)
 
         if currentline == 9:
             # voda
             if int(row[0]) == 1:
                 waterStatus = waterStatus - 0.2
+                GPIO.output(blue_pin4, GPIO.HIGH)
+            else:
+                GPIO.output(blue_pin4, GPIO.LOW)
 
         if currentline == 10:
             if int(row[0]) == 1:
-                if (stavzamku == 1):
-                    GPIO.output(MotorPin2, GPIO.HIGH)
-                    time.sleep(0.5)
-                    GPIO.output(MotorPin2, GPIO.LOW)
-                    stavzamku = 1
+                    print("ZAMEK PIN VALUE" + str(row[0]))
+                    if (stavzamku == 1):
+                        print("ZAMEK!")
+                        GPIO.output(MotorPin2, GPIO.HIGH)
+                        time.sleep(2)
+                        GPIO.output(MotorPin2, GPIO.LOW)
+                        suckerino = 0
+                        time.sleep(2)
 
-                if (stavzamku == 0):
-                    GPIO.output(MotorPin, GPIO.HIGH)
-                    time.sleep(0.5)
-                    GPIO.output(MotorPin, GPIO.LOW)
-                    stavzamku = 0
-            else:
-                if (stavzamku == 1):
-                    GPIO.output(MotorPin2, GPIO.HIGH)
-                    time.sleep(0.5)
-                    GPIO.output(MotorPin2, GPIO.LOW)
-                    stavzamku = 1
+                    if (stavzamku == 0):
+                        print("ZAMEK!")
+                        GPIO.output(MotorPin, GPIO.HIGH)
+                        time.sleep(2)
+                        GPIO.output(MotorPin, GPIO.LOW)
+                        suckerino = 1
+                        time.sleep(2)
 
-                if (stavzamku == 0):
-                    GPIO.output(MotorPin, GPIO.HIGH)
-                    time.sleep(0.5)
-                    GPIO.output(MotorPin, GPIO.LOW)
-                    stavzamku = 0
-
+            stavzamku = 0 + suckerino
+            print("STAV ZAMKU: "+str(stavzamku))
 
         if (numberOfWaterMinus % 50) == 0:
             subprocess.call(["php", "-f", "test.php", str(waterStatus)])
