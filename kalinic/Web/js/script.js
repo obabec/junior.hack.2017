@@ -38,6 +38,13 @@ function check(){
 	}
 
 }
+var locker=0;
 function lock(){
-	$("#lock").css("opacity", "1"); 
+	locker++;
+	if(locker%2==1){
+		$("#lock").css("opacity", "1"); 
+	}
+	else{
+		$("#lock").css("opacity", "0");
+	}
 }

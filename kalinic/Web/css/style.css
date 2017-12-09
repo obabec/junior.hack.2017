@@ -2,6 +2,11 @@
     font-family: HACKED;
     src: url(../font/HACKED.ttf);
 }
+#fullpage{
+	opacity: 0;
+	transition: 2s opacity;
+
+}
 body,html{
 	overflow: hidden;
 	top:0;
@@ -13,13 +18,27 @@ body,html{
 	font-family: HACKED;
 
 }
+body{
+	background-color: #303030;
+}
 h1{
 	font-size: 69px;
 	color: white;
 	width: 100%;
 }
+.full{
+	width: 100%;	
+}
+.centr{
+	margin:0 45%;
+}
 button{
+	width: 100%;
+	background:none;
 	border:none;
+}
+button:active{
+	outline: none;
 }
 .hide{
 	opacity: 0;
@@ -29,11 +48,9 @@ button{
 .load{
 	display: block;
 	z-index: 4;
-	position: fixed;
+	position: absolute;
 	top: 0;
-	width: 100%;
-	height: 100%;
-	background
+	left: 0;
 }
 .bloky{
 	display: inline-block;
@@ -56,7 +73,7 @@ button{
 	z-index: 3;
 	position: absolute;
 }
-#l1,#l2,#l3,#l4,#d1,#d2,#d3,#d4{
+#l1,#l2,#l3,#l4,#d1,#d2,#d3,#d4,#lock{
 	opacity: 0;
 }
 input[type=range]{
