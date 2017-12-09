@@ -11,7 +11,7 @@ GPIO.setmode(GPIO.BOARD)
 suckerino = 0
 results = 0
 numberOfWaterMinus = 0
-waterStatus = 500
+waterStatus = 0
 stavzamku = 0
 odpocetzamku = 200
 
@@ -124,7 +124,7 @@ def getDtb():
 	if currentline == 6:
            # voda
            if int(row[0]) == 1:
-               waterStatus = waterStatus - 0.2
+               waterStatus = waterStatus + 0.2
                GPIO.output(blue_pin1, GPIO.HIGH)
            else:
                GPIO.output(blue_pin1, GPIO.LOW)
@@ -132,7 +132,7 @@ def getDtb():
         if currentline == 7:
             # voda
             if int(row[0]) == 1:
-                waterStatus = waterStatus - 0.2
+                waterStatus = waterStatus + 0.2
                 GPIO.output(blue_pin2, GPIO.HIGH)
             else:
                 GPIO.output(blue_pin2, GPIO.LOW)
@@ -140,7 +140,7 @@ def getDtb():
         if currentline == 8:
             # voda 
             if int(row[0]) == 1:
-                waterStatus = waterStatus - 0.2
+                waterStatus = waterStatus + 0.2
                 GPIO.output(blue_pin3, GPIO.HIGH)
             else:
                 GPIO.output(blue_pin3, GPIO.LOW)
@@ -148,7 +148,7 @@ def getDtb():
         if currentline == 9:
             # voda
             if int(row[0]) == 1:
-                waterStatus = waterStatus - 0.2
+                waterStatus = waterStatus + 0.2
                 GPIO.output(blue_pin4, GPIO.HIGH)
             else:
                 GPIO.output(blue_pin4, GPIO.LOW)
