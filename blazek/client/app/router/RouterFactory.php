@@ -17,7 +17,10 @@ class RouterFactory
 	public static function createRouter()
 	{
 		$router = new RouteList;
-        $router[] = new Route('light', 'Db:ligth');
+		$router[] = new Route('events','Homepage:events');
+		$router[] = new Route('door', 'Homepage:lock');
+		$router[] = new Route('read-light', 'Homepage:getLight');
+        $router[] = new Route('light', 'Homepage:light');
 		$router[] = new Route('<presenter>/<action>', 'Homepage:default');
 		return $router;
 	}

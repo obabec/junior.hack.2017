@@ -1,0 +1,8 @@
+parameters:
+
+doctrine:
+	user: php
+	password: pokemon123
+	dbname: hackathonn
+	metadata:
+		App: %appDir%

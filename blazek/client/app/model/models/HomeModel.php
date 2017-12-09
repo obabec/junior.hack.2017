@@ -12,28 +12,59 @@ namespace App\Models;
 use ApiModule\Managers\ScriptManager;
 use App\Exceptions\ApiException;
 use App\Exceptions\ScriptException;
+use Kdyby\Doctrine\EntityManager;
 
 class HomeModel
 {
     /** @var  ScriptManager */
     protected $scripManager;
 
+    /** @var  EntityManager */
+    protected $em;
+
     /**
-     * ScriptModel constructor.
+     * HomeModel constructor.
      * @param ScriptManager $scripManager
+     * @param EntityManager $em
      */
-    public function __construct(ScriptManager $scripManager)
+    public function __construct(ScriptManager $scripManager, EntityManager $em)
     {
         $this->scripManager = $scripManager;
+        $this->em = $em;
     }
 
-
-    public function neco()
+    /**
+     * @param integer $argument
+     */
+    public function zamnkout($argument)
     {
-        try {
-            // $this->scripManager->runScript();
-        } catch (ScriptException $e) {
-            throw new ApiException($e->getMessage());
-        }
+        $this->em->getConnection()->update('pins', [
+            'argument' => $argument
+        ], [
+            'id' => 11
+        ]);
+    }
+
+    /**
+     * @return array
+     */
+    public function readSvetlo()
+    {
+        return $this->em->getConnection()->fetchAll('SELECT * FROM pins WHERE id <= 10');
+    }
+
+    public function prepniSvetle($id, $argument)
+    {
+        $this->em->getConnection()->update('pins', [
+            'argument' => $argument
+        ], ['id' =>$id]);
+    }
+
+    /**
+     * @return EntityManager
+     */
+    public function getEntityManager()
+    {
+        return $this->em;
     }
 }
