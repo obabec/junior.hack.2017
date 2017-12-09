@@ -168,7 +168,7 @@ def getDtb():
             dbWater = MySQLdb.connect("localhost", "root", "pokemon123", "hackathonn")
             cursorWater = dbWater.cursor()
 
-            cursorWater.execute("UPDATE pins SET argument = (?) WHERE id = 12", waterStatus)
+            cursorWater.execute("UPDATE pins SET argument = (%s) WHERE id = (%s)", (waterStatus,12))
 
         numberOfWaterMinus = numberOfWaterMinus + 1
         currentline = 1 + currentline
