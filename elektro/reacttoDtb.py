@@ -133,25 +133,13 @@ def getDtb():
                     GPIO.output(MotorPin2, GPIO.HIGH)
                     time.sleep(0.5)
                     GPIO.output(MotorPin2, GPIO.LOW)
-                    stavzamku = 1
+                    stavzamku = 0
 
                 if (stavzamku == 0):
                     GPIO.output(MotorPin, GPIO.HIGH)
                     time.sleep(0.5)
                     GPIO.output(MotorPin, GPIO.LOW)
-                    stavzamku = 0
-            else:
-                if (stavzamku == 1):
-                    GPIO.output(MotorPin2, GPIO.HIGH)
-                    time.sleep(0.5)
-                    GPIO.output(MotorPin2, GPIO.LOW)
                     stavzamku = 1
-
-                if (stavzamku == 0):
-                    GPIO.output(MotorPin, GPIO.HIGH)
-                    time.sleep(0.5)
-                    GPIO.output(MotorPin, GPIO.LOW)
-                    stavzamku = 0
 
 
         if (numberOfWaterMinus % 50) == 0:
