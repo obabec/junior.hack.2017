@@ -36,15 +36,21 @@ function check(){
 	if (!document.getElementById("c4").checked) {
 		$("#d4").css("opacity", "0");
 	}
+	if (document.getElementById("c5").checked) {
+		$("#d5").css("opacity", "1");
+	}
+	if (!document.getElementById("c5").checked) {
+		$("#d5").css("opacity", "0");
+	}
 
 }
 var locker=0;
 function lock(){
 	locker++;
 	if(locker%2==1){
-		$("#lock").css("opacity", "1"); 
+		$("#lock2").css("opacity", "1"); 
 	}
 	else{
-		$("#lock").css("opacity", "0");
+		$("#lock2").css("opacity", "0");
 	}
 }

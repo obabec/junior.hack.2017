@@ -22,15 +22,18 @@ body{
 	background-color: #303030;
 }
 h1{
+	margin:2% 0;
 	font-size: 69px;
 	color: white;
 	width: 100%;
 }
 h3{
 	color: white;
-	width: 20%;
 	text-align: center;
+	width: 100%;
+	font-size: 36px;
 }
+
 .full{
 	width: 100%;	
 }
@@ -45,6 +48,7 @@ button{
 button:active{
 	outline: none;
 }
+
 .hide{
 	opacity: 0;
 	width: 100%;
@@ -79,13 +83,12 @@ button:active{
 	position: relative;
 }
 .light2{
-	top:0;
 	left: 0;
 	width: 100%;
 	z-index: 3;
 	position: absolute;
 }
-#l1,#l2,#l3,#l4,#d1,#d2,#d3,#d4,#lock{
+#l1,#l2,#l3,#l4,#d1,#d2,#d3,#d4,#d5,#lock2{
 	opacity: 0;
 }
 input[type=range]{
@@ -140,7 +143,7 @@ input[type=range]{
 .switch {
   position: relative;
   display: inline-block;
-  width: 60px;
+  width: 100%;
   height: 34px;
 }
 
@@ -323,6 +326,7 @@ input[type=range]:focus::-ms-fill-lower {
 input[type=range]:focus::-ms-fill-upper {
   background: rgba(51, 109, 255, 0.5);
 }
+
 .dropdown-content {
     display: none;
     position: absolute;
@@ -344,4 +348,8 @@ input[type=range]:focus::-ms-fill-upper {
 }
 .dropdown:hover .dropdown-content {
     display: block;
+}
+.lock{
+	margin:0 35%;
+
 }

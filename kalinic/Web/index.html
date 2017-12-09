@@ -25,7 +25,7 @@
 					<div class="dropdown-content">
 						<a href="#light">Light</a>
 						<a href="#water">Water</a>
-						<a href="#lock">Lock</a>
+						<a href="#locking">Lock</a>
 						<a href="#heating">Heating</a>
 						<a href="#payment">Payment</a>
 					</div>
@@ -46,7 +46,7 @@
 
 				<form>
 				<div class="container"> 
-					<h3>living</h3>
+					<h3>LIVING ROOM</h3>
 				<div class="bloky">
 
 					<img src="img/light.png" class="light">
@@ -58,7 +58,7 @@
 				</div>
 
 				<div class="container"> 
-					<h3>living</h3>
+					<h3>KITCHEN</h3>
 				<div class="bloky">
 
 					<img src="img/light.png" class="light">
@@ -70,7 +70,7 @@
 				</div>
 
 				<div class="container"> 
-					<h3>living</h3>
+					<h3>HALL</h3>
 				<div class="bloky">
 
 					<img src="img/light.png" class="light">
@@ -82,7 +82,7 @@
 				</div>
 
 				<div class="container"> 
-					<h3>living</h3>
+					<h3>TOILET</h3>
 				<div class="bloky">
 
 					<img src="img/light.png" class="light">
@@ -104,54 +104,73 @@
 		<section class="section-bg section" id="water">
 			<div class="content">
 				<h1>WATER</h1>
-			
-					<div class="bloky">
+
+					<div class="container">
+						<div class="bloky">
+						<h3>WC</h3>
 						<img src="img/water_off.png" class="light">
 						<img src="img/water_on.png" class="light2" id="d1">
 						<label class="switch">
 						  <input type="checkbox" id="c1" onclick="check()">
 						  <span class="slider round"></span>
 						</label>
+						</div>
 					</div>
 
-					<div class="bloky">
+					<div class="container">
+						<div class="bloky">
+						<h3>SHOWER</h3>
 						<img src="img/water_off.png" class="light">
 						<img src="img/water_on.png" class="light2" id="d2">
 						<label class="switch">
-						  <input type="checkbox" id="c2" checked  onclick="check()">
+						  <input type="checkbox" id="c2" onclick="check()">
 						  <span class="slider round"></span>
 						</label>
+						</div>
 					</div>
 
-					<div class="bloky">
+					<div class="container">
+						<div class="bloky">
+						<h3>DISH WASHER</h3>
 						<img src="img/water_off.png" class="light">
 						<img src="img/water_on.png" class="light2" id="d3">
 						<label class="switch">
-						  <input type="checkbox" id="c3"  onclick="check()">
+						  <input type="checkbox" id="c3" onclick="check()">
 						  <span class="slider round"></span>
 						</label>
+						</div>
 					</div>
 
-					<div class="bloky">
+				<div class="container">
+						<div class="bloky">
+						<h3>GARDEN</h3>
 						<img src="img/water_off.png" class="light">
 						<img src="img/water_on.png" class="light2" id="d4">
 						<label class="switch">
-						  <input type="checkbox" id="c4"  onclick="check()">
+						  <input type="checkbox" id="c4" onclick="check()">
 						  <span class="slider round"></span>
 						</label>
+						</div>
 					</div>
+			
+					
 			</div>
 		</section>
 
-		<section class="section-bg section" id="lock">
+		<section class="section-bg section" id="locking">
 			<div class="content">
+
 				<h1>LOCK</h1>
-				<button onclick="lock()">					
-					<div class="bloky">
-						<img src="img/unlocked.png" class="light">
-						<img src="img/locked.png" class="light2" id="lock">
-					</div>
-				</button>
+				<div class="container lock">
+				<h3>DOOR</h3>
+					<button onclick="lock()">					
+						<div class="bloky">
+							<img src="img/unlocked.png" class="light">
+							<img src="img/locked.png" class="light2" id="lock2">
+						</div>
+					</button>
+				</div>
+				
 			</div>
 		</section>
 
@@ -160,8 +179,19 @@
 				<h1>HEATING</h1>
 									
 					<div >
-					<img src="img/heating.png" class="centr">
-					<input type="range" class="full" name="">
+					
+					<div class="container lock">
+						<div class="bloky">
+						
+							<img src="img/heating_off.png" class="light">
+							<img src="img/heating_on.png" class="light2" id="d5">
+							<br>
+						<label class="switch">
+						  <input type="checkbox" id="c5" onclick="check()">
+						  <span class="slider round"></span>
+						</label>
+						</div>
+					</div>
 					</div>
 				
 			</div>
