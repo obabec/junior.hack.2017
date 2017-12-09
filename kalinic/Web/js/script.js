@@ -10,7 +10,34 @@ function range() {
 	$("#l4").css("opacity", "0."+s4); 
 }
 function check(){
-	if ($("#c1").is(':checked')) {
-		alert('Ko');
+	if (document.getElementById("c1").checked) {
+		$("#d1").css("opacity", "1");
 	}
+	if (!document.getElementById("c1").checked) {
+		$("#d1").css("opacity", "0");
+	}
+
+	if (document.getElementById("c2").checked) {
+		$("#d2").css("opacity", "1");
+	}
+	if (!document.getElementById("c2").checked) {
+		$("#d2").css("opacity", "0");
+	}
+
+	if (document.getElementById("c3").checked) {
+		$("#d3").css("opacity", "1");
+	}
+	if (!document.getElementById("c3").checked) {
+		$("#d3").css("opacity", "0");
+	}
+	if (document.getElementById("c4").checked) {
+		$("#d4").css("opacity", "1");
+	}
+	if (!document.getElementById("c4").checked) {
+		$("#d4").css("opacity", "0");
+	}
+
+}
+function lock(){
+	$("#lock").css("opacity", "1"); 
 }
