@@ -15,10 +15,20 @@
 		<section class="uvod section">
 
 			<nav class="navbar">
-				<div class="menu">
-					<div class="menu-span"></div>
-					<div class="menu-span"></div>
-					<div class="menu-span"></div>
+				<div class="dropdown">
+					<div class="menu">
+						<div class="menu-span"></div>
+						<div class="menu-span"></div>
+						<div class="menu-span"></div>
+					
+					</div>
+					<div class="dropdown-content">
+						<a href="#light">Light</a>
+						<a href="#water">Water</a>
+						<a href="#locking">Lock</a>
+						<a href="#heating">Heating</a>
+						<a href="#payment">Payment</a>
+					</div>
 				</div>
 			</nav>
 
@@ -28,41 +38,62 @@
 
 		</section>
 
-		<section class="section-bg section">
+		<section class="section-bg section" id="light">
 
 			<div class="content">
 
 				<h1>LIGHTS</h1>
 
 				<form>
-
+				<div class="container"> 
+					<h3>LIVING ROOM</h3>
 				<div class="bloky">
+
 					<img src="img/light.png" class="light">
 					<img src="img/light_1.png" class="light2" id="l1">
-					<input type="range" name="" id="s1" onchange="range()">
+					<input type="range" name="" max="99" id="s1" onchange="range()">
 					
 				</div>
 
+				</div>
+
+				<div class="container"> 
+					<h3>KITCHEN</h3>
 				<div class="bloky">
+
 					<img src="img/light.png" class="light">
 					<img src="img/light_1.png" class="light2" id="l2">
-					<input type="range" name="" id="s2" onchange="range()">
-					
-				</div>
-				
-				<div class="bloky">
-					<img src="img/light.png" class="light">
-					<img src="img/light_1.png" class="light2" id="l3">
-					<input type="range" name="" id="s3" onchange="range()">
+					<input type="range" name="" max="99" id="s2" onchange="range()">
 					
 				</div>
 
+				</div>
+
+				<div class="container"> 
+					<h3>HALL</h3>
 				<div class="bloky">
+
 					<img src="img/light.png" class="light">
-					<img src="img/light_1.png" class="light2" id="l4">
-					<input type="range" name="" id="s4" onchange="range()">
+					<img src="img/light_1.png" class="light2" id="l3">
+					<input type="range" name="" max="99" id="s3" onchange="range()">
 					
 				</div>
+
+				</div>
+
+				<div class="container"> 
+					<h3>TOILET</h3>
+				<div class="bloky">
+
+					<img src="img/light.png" class="light">
+					<img src="img/light_1.png" class="light2" id="l4">
+					<input type="range" name="" max="99" id="s4" onchange="range()">
+					
+				</div>
+
+				</div>
+		
+				
 
 				</form>
 
@@ -70,73 +101,103 @@
 			</div>
 		</section>
 
-		<section class="section-bg section">
+		<section class="section-bg section" id="water">
 			<div class="content">
 				<h1>WATER</h1>
-			
-					<div class="bloky">
+
+					<div class="container">
+						<div class="bloky">
+						<h3>WC</h3>
 						<img src="img/water_off.png" class="light">
 						<img src="img/water_on.png" class="light2" id="d1">
 						<label class="switch">
 						  <input type="checkbox" id="c1" onclick="check()">
 						  <span class="slider round"></span>
 						</label>
+						</div>
 					</div>
 
-					<div class="bloky">
+					<div class="container">
+						<div class="bloky">
+						<h3>SHOWER</h3>
 						<img src="img/water_off.png" class="light">
 						<img src="img/water_on.png" class="light2" id="d2">
 						<label class="switch">
-						  <input type="checkbox" id="c2" checked  onclick="check()">
+						  <input type="checkbox" id="c2" onclick="check()">
 						  <span class="slider round"></span>
 						</label>
+						</div>
 					</div>
 
-					<div class="bloky">
+					<div class="container">
+						<div class="bloky">
+						<h3>DISH WASHER</h3>
 						<img src="img/water_off.png" class="light">
 						<img src="img/water_on.png" class="light2" id="d3">
 						<label class="switch">
-						  <input type="checkbox" id="c3"  onclick="check()">
+						  <input type="checkbox" id="c3" onclick="check()">
 						  <span class="slider round"></span>
 						</label>
+						</div>
 					</div>
 
-					<div class="bloky">
+				<div class="container">
+						<div class="bloky">
+						<h3>GARDEN</h3>
 						<img src="img/water_off.png" class="light">
 						<img src="img/water_on.png" class="light2" id="d4">
 						<label class="switch">
-						  <input type="checkbox" id="c4"  onclick="check()">
+						  <input type="checkbox" id="c4" onclick="check()">
 						  <span class="slider round"></span>
 						</label>
+						</div>
 					</div>
+			
+					
 			</div>
 		</section>
 
-		<section class="section-bg section">
+		<section class="section-bg section" id="locking">
 			<div class="content">
+
 				<h1>LOCK</h1>
-				<button onclick="lock()">					
-					<div class="bloky">
-						<img src="img/unlocked.png" class="light">
-						<img src="img/locked.png" class="light2" id="lock">
-					</div>
-				</button>
+				<div class="container lock">
+				<h3>DOOR</h3>
+					<button onclick="lock()">					
+						<div class="bloky">
+							<img src="img/unlocked.png" class="light">
+							<img src="img/locked.png" class="light2" id="lock2">
+						</div>
+					</button>
+				</div>
+				
 			</div>
 		</section>
 
-		<section class="section-bg section">
+		<section class="section-bg section" id="heating">
 			<div class="content">
 				<h1>HEATING</h1>
 									
 					<div >
-					<img src="img/heating.png" class="centr">
-					<input type="range" class="full" name="">
+					
+					<div class="container lock">
+						<div class="bloky">
+						
+							<img src="img/heating_off.png" class="light">
+							<img src="img/heating_on.png" class="light2" id="d5">
+							<br>
+						<label class="switch">
+						  <input type="checkbox" id="c5" onclick="check()">
+						  <span class="slider round"></span>
+						</label>
+						</div>
+					</div>
 					</div>
 				
 			</div>
 		</section>
 
-		<section class="section-bg section">
+		<section class="section-bg section" id="payment">
 			<div class="content">
 				<h1>PAYMENT</h1>
 									
