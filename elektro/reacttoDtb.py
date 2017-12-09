@@ -100,7 +100,7 @@ def getDtb():
             led_pwm4.ChangeDutyCycle(int(row[0]))
 
         if currentline == 4:
-           #print(row[0])
+           print(row[0])
            led_pwm5.ChangeDutyCycle(int(row[0]))
 
         if currentline == 5:
