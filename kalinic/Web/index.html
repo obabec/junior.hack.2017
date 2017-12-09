@@ -15,10 +15,20 @@
 		<section class="uvod section">
 
 			<nav class="navbar">
-				<div class="menu">
-					<div class="menu-span"></div>
-					<div class="menu-span"></div>
-					<div class="menu-span"></div>
+				<div class="dropdown">
+					<div class="menu">
+						<div class="menu-span"></div>
+						<div class="menu-span"></div>
+						<div class="menu-span"></div>
+					
+					</div>
+					<div class="dropdown-content">
+						<a href="#light">Light</a>
+						<a href="#water">Water</a>
+						<a href="#lock">Lock</a>
+						<a href="#heating">Heating</a>
+						<a href="#payment">Payment</a>
+					</div>
 				</div>
 			</nav>
 
@@ -28,41 +38,62 @@
 
 		</section>
 
-		<section class="section-bg section">
+		<section class="section-bg section" id="light">
 
 			<div class="content">
 
 				<h1>LIGHTS</h1>
 
 				<form>
-
+				<div class="container"> 
+					<h3>living</h3>
 				<div class="bloky">
+
 					<img src="img/light.png" class="light">
 					<img src="img/light_1.png" class="light2" id="l1">
-					<input type="range" name="" id="s1" onchange="range()">
+					<input type="range" name="" max="99" id="s1" onchange="range()">
 					
 				</div>
 
+				</div>
+
+				<div class="container"> 
+					<h3>living</h3>
 				<div class="bloky">
+
 					<img src="img/light.png" class="light">
 					<img src="img/light_1.png" class="light2" id="l2">
-					<input type="range" name="" id="s2" onchange="range()">
-					
-				</div>
-				
-				<div class="bloky">
-					<img src="img/light.png" class="light">
-					<img src="img/light_1.png" class="light2" id="l3">
-					<input type="range" name="" id="s3" onchange="range()">
+					<input type="range" name="" max="99" id="s2" onchange="range()">
 					
 				</div>
 
+				</div>
+
+				<div class="container"> 
+					<h3>living</h3>
 				<div class="bloky">
+
 					<img src="img/light.png" class="light">
-					<img src="img/light_1.png" class="light2" id="l4">
-					<input type="range" name="" id="s4" onchange="range()">
+					<img src="img/light_1.png" class="light2" id="l3">
+					<input type="range" name="" max="99" id="s3" onchange="range()">
 					
 				</div>
+
+				</div>
+
+				<div class="container"> 
+					<h3>living</h3>
+				<div class="bloky">
+
+					<img src="img/light.png" class="light">
+					<img src="img/light_1.png" class="light2" id="l4">
+					<input type="range" name="" max="99" id="s4" onchange="range()">
+					
+				</div>
+
+				</div>
+		
+				
 
 				</form>
 
@@ -70,7 +101,7 @@
 			</div>
 		</section>
 
-		<section class="section-bg section">
+		<section class="section-bg section" id="water">
 			<div class="content">
 				<h1>WATER</h1>
 			
@@ -112,7 +143,7 @@
 			</div>
 		</section>
 
-		<section class="section-bg section">
+		<section class="section-bg section" id="lock">
 			<div class="content">
 				<h1>LOCK</h1>
 				<button onclick="lock()">					
@@ -124,7 +155,7 @@
 			</div>
 		</section>
 
-		<section class="section-bg section">
+		<section class="section-bg section" id="heating">
 			<div class="content">
 				<h1>HEATING</h1>
 									
@@ -136,7 +167,7 @@
 			</div>
 		</section>
 
-		<section class="section-bg section">
+		<section class="section-bg section" id="payment">
 			<div class="content">
 				<h1>PAYMENT</h1>
 									
