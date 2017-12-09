@@ -169,7 +169,7 @@ def getDtb():
                         suckerino = 1
                         time.sleep(1)
 
-            stavzamku = int(suckerino)
+            stavzamku = 0 + suckerino
 
 
         if (numberOfWaterMinus % 50) == 0:
