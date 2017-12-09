@@ -159,7 +159,7 @@ def getDtb():
                     if (stavzamku == 1):
                         print("ZAMEK!")
                         GPIO.output(MotorPin2, GPIO.HIGH)
-                        time.sleep(1)
+                        time.sleep(2)
                         GPIO.output(MotorPin2, GPIO.LOW)
                         suckerino = 0
                         time.sleep(1)
@@ -170,7 +170,7 @@ def getDtb():
                         time.sleep(1)
                         GPIO.output(MotorPin, GPIO.LOW)
                         suckerino = 1
-                        time.sleep(1)
+                        time.sleep(2)
 
             stavzamku = 0 + suckerino
             print("STAV ZAMKU: "+str(stavzamku))
