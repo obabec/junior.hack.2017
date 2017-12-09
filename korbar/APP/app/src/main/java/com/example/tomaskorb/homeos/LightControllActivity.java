@@ -328,20 +328,20 @@ public class LightControllActivity extends Activity {
                 ((LightImageView)findViewById(R.id.Light1Brightness)).PercentOfLight = obj2.getInt("argument");
                 ((LightImageView)findViewById(R.id.Light1Brightness)).RedrawLightness();
 
-                json2array = kappa.getJSONArray(1);
-                obj2 = json2array.getJSONObject(0);
+
+                obj2 = json2array.getJSONObject(1);
                 ((SeekBar)findViewById(R.id.Light2BrightnessController)).setProgress(obj2.getInt("argument"));
                 ((LightImageView)findViewById(R.id.Light2Brightness)).PercentOfLight = obj2.getInt("argument");
                 ((LightImageView)findViewById(R.id.Light2Brightness)).RedrawLightness();
 
-                json2array = kappa.getJSONArray(2);
-                obj2 = json2array.getJSONObject(0);
+
+                obj2 = json2array.getJSONObject(2);
                 ((SeekBar)findViewById(R.id.Light3BrightnessController)).setProgress(obj2.getInt("argument"));
                 ((LightImageView)findViewById(R.id.Light3Brightness)).PercentOfLight = obj2.getInt("argument");
                 ((LightImageView)findViewById(R.id.Light3Brightness)).RedrawLightness();
 
-                json2array = kappa.getJSONArray(3);
-                obj2 = json2array.getJSONObject(0);
+
+                obj2 = json2array.getJSONObject(3);
                 ((SeekBar)findViewById(R.id.Light4BrightnessController)).setProgress(obj2.getInt("argument"));
                 ((LightImageView)findViewById(R.id.Light4Brightness)).PercentOfLight = obj2.getInt("argument");
                 ((LightImageView)findViewById(R.id.Light4Brightness)).RedrawLightness();

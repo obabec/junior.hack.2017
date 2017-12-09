@@ -134,7 +134,7 @@ public class LockControllActivity extends Activity {
         @Override
         protected void onPostExecute(String result)
         {
-
+            Log.e("adasd","asdasd");
         }
 
     }

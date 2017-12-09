@@ -5,7 +5,11 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.SeekBar;
 import android.widget.TextView;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -24,13 +28,13 @@ public class PaymentsControll extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payments_controll);
-
+    new AsyncGetLightTasks().execute();
       //  ((TextView)findViewById(R.id.WaterConsumptionTextView))
       //  ((TextView)findViewById(R.id.EnergyConsumptionTextView))
 
     }
 
-    private class AsyncLightTasks extends AsyncTask<String, String, String>
+    private class AsyncGetLightTasks extends AsyncTask<String, String, String>
     {
 
         HttpURLConnection conn;
@@ -45,7 +49,7 @@ public class PaymentsControll extends Activity {
         protected String doInBackground(String... params) {
             try {
 
-                url = new URL("http://10.10.5.234/api/api/light?id="+params[0]+"&value="+params[1]);
+                url = new URL("http://10.10.5.234/api/api/watt");
 
             } catch (MalformedURLException e) {
 
@@ -67,8 +71,8 @@ public class PaymentsControll extends Activity {
 
 
                 Uri.Builder builder = new Uri.Builder()
-                        .appendQueryParameter("id", params[0])
-                        .appendQueryParameter("value", params[1])
+                        .appendQueryParameter("id", " ")
+                        .appendQueryParameter("value", " ")
                         ;
                 String query = builder.build().getEncodedQuery();
 
@@ -121,7 +125,23 @@ public class PaymentsControll extends Activity {
         }
 
         @Override
-        protected void onPostExecute(String result) {
+        protected void onPostExecute(String result)
+        {
+            try
+            {
+                JSONObject obj = new JSONObject(result);
+                JSONArray pole = obj.getJSONArray("data");
+                JSONObject obj2 = pole.getJSONObject(0);
+                ((TextView)findViewById(R.id.EnergyConsumptionTextView)).setText(String.valueOf(obj.getDouble("output")));
+                Log.e("pausda","asdasd");
+
+            }
+            catch (Exception e)
+            {
+                Log.e("Chyba",e.getMessage());
+            }
+
+
             Log.e("pausda","asdasd");
         }
 
